@@ -126,6 +126,7 @@
 .lecture-card .lecture-no { display: grid; gap: 2px; }
 .lecture-card .lecture-no b { font-family: var(--serif); font-size: 30px; font-weight: 500; line-height: 1; letter-spacing: -.03em; }
 .lecture-card .lecture-no small { color: var(--ink-soft); font-size: 9px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+.lecture-card .lecture-date { margin-top: 6px; color: var(--coral); font-family: var(--serif); font-size: 14px; letter-spacing: .02em; }
 .lecture-card h3 { margin: 0 0 6px; font-size: 18px; letter-spacing: .02em; line-height: 1.5; }
 .lecture-card p { margin: 0; color: var(--ink-soft); font-size: 13px; }
 .lecture-card .resource-cta { margin-top: 0; }

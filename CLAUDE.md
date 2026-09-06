@@ -27,7 +27,7 @@ python3 -m http.server 8000
 ## Conventions
 
 - Course facts (session titles, evaluation, contact, office hours) must match the syllabus. Kawai's evaluation: 授業への参加度（Teamsへの記事投稿）および小テスト. All communication with students is via Microsoft Teams; lecture notes are posted on Teams, not on this site.
-- No concrete dates are published for sessions (they are announced on Teams); keep it that way unless the user provides dates.
+- Kawai's sessions are on five consecutive Mondays, 2限 10:40–12:10, room 2-403: 第6回 11/2, 第7回 11/9, 第8回 11/16, 第9回 11/23, 第10回 11/30 (2026). Dates appear on the top page (course card, news, schedule), `lectures/index.html`, and each lecture page's meta chips; update all of them together if the schedule changes. Note 11/23 is a national holiday (勤労感謝の日); the user confirmed the weekly schedule as-is.
 - Each lecture page has the same six blocks: ねらい / キーワード / 講義の流れ / 考えてみよう（Teams投稿のテーマ） / 読んでみよう / 復習のポイント, plus prev/next pager. Keep new pages consistent with that structure.
 - Bump the `?v=YYYYMMDD` query on CSS/JS links when changing those files, so browsers pick up the new version.
 - When making a user-visible change, add a dated entry (Japanese, newest first) to the 更新履歴 section of `README.md`.
