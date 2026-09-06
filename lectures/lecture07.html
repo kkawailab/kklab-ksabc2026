@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="AIの発展と生成AI（大規模言語モデル）のしくみを概観し、企業での活用、限界・リスク、AIガバナンスを学ぶ。" />
+    <meta name="theme-color" content="#0f1d33" />
+    <meta property="og:title" content="第7回 人工知能：企業における生成AI｜企業診断ＡＢＣ 2026" />
+    <meta property="og:description" content="AIの発展と生成AI（大規模言語モデル）のしくみを概観し、企業での活用、限界・リスク、AIガバナンスを学ぶ。" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://kklab.mobi/kklab-ksabc2026/lectures/lecture07.html" />
+    <title>第7回 人工知能：企業における生成AI｜企業診断ＡＢＣ 2026</title>
+    <link rel="canonical" href="https://kklab.mobi/kklab-ksabc2026/lectures/lecture07.html" />
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="../assets/css/style.css?v=20260907" />
+    <link rel="stylesheet" href="../assets/css/pages.css?v=20260907" />
+    <script src="../assets/js/main.js?v=20260907" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">本文へ移動</a>
+
+    <header class="site-header" data-header>
+      <div class="header-inner">
+        <a class="brand" href="../" aria-label="企業診断ＡＢＣ 2026 トップへ">
+          <span class="brand-mark" aria-hidden="true">KS</span>
+          <span class="brand-copy">
+            <strong>企業診断ＡＢＣ</strong>
+            <small>Kawai Section — 2026</small>
+          </span>
+        </a>
+
+        <button
+          class="menu-button"
+          type="button"
+          aria-expanded="false"
+          aria-controls="site-navigation"
+          data-menu-button
+        >
+          <span class="menu-button-lines" aria-hidden="true"></span>
+          <span class="sr-only">メニューを開く</span>
+        </button>
+
+        <nav id="site-navigation" class="site-nav" aria-label="メインナビゲーション" data-navigation>
+          <a href="../#overview">授業概要</a>
+          <a href="../#schedule">講義予定</a>
+          <a href="./">講義一覧</a>
+          <a href="../#guide">評価・受講のしかた</a>
+          <a class="nav-contact" href="../#contact">問い合わせ</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <section class="page-hero" aria-labelledby="page-title">
+        <div class="container">
+          <ol class="breadcrumb" aria-label="パンくずリスト">
+            <li><a href="../">トップ</a></li>
+            <li><a href="./">講義一覧</a></li>
+            <li>第7回</li>
+          </ol>
+          <p class="eyebrow"><span></span> Lecture 07 — Part 01 — 基礎と技術</p>
+          <h1 id="page-title"><small>第7回　人工知能</small>企業における生成AI</h1>
+          <p class="page-lead">文章を書き、要約し、翻訳し、コードを生成する。生成AIは企業の仕事のやり方を急速に変えつつあります。AIの歴史と生成AIのしくみを概観したうえで、企業での活用と、その限界・リスクへの向き合い方を考えます。</p>
+          <ul class="page-meta" aria-label="この回の情報">
+            <li>担当：河合 勝彦</li><li>月曜 2限・2-403</li><li class="is-accent">Teams投稿あり</li>
+          </ul>
+        </div>
+      </section>
+
+      <div class="container lecture-layout">
+        <aside class="lecture-aside" aria-label="この回の目次と前後の回">
+          <div>
+            <p class="aside-label">Contents — この回の目次</p>
+            <ol class="aside-toc">
+              <li><a href="#goals"><span>01</span>ねらい</a></li>
+              <li><a href="#keywords"><span>02</span>キーワード</a></li>
+              <li><a href="#flow"><span>03</span>講義の流れ</a></li>
+              <li><a href="#think"><span>04</span>考えてみよう</a></li>
+              <li><a href="#reading"><span>05</span>読んでみよう</a></li>
+              <li><a href="#review"><span>06</span>復習のポイント</a></li>
+            </ol>
+          </div>
+          <div>
+            <p class="aside-label">Sessions — 前後の回</p>
+            <nav class="aside-nav" aria-label="前後の回">
+              <a href="lecture06.html"><small>← 第6回</small><b>経営情報の基礎：企業（組織）とソーシャルメディア</b></a>
+              <a href="lecture08.html"><small>第8回 →</small><b>つながり：ネットワークがもたらす企業の変化</b></a>
+              <a href="./"><small>Index</small><b>講義一覧へ戻る</b></a>
+            </nav>
+          </div>
+        </aside>
+
+        <article class="lecture-body">
+          <section id="goals" class="block" aria-labelledby="goals-title">
+            <p class="block-label">01 — Goals</p>
+            <h2 id="goals-title">ねらい</h2>
+            <p class="lead">この回を終えたときに、次のことができるようになることを目指します。</p>
+            <ol class="goal-list">
+              <li><span>01</span>AIの発展（ルールベース → 機械学習 → 深層学習 → 生成AI）を大まかに説明できる。</li>
+              <li><span>02</span>大規模言語モデル（LLM）の基本的なしくみと、得意なこと・苦手なことを説明できる。</li>
+              <li><span>03</span>企業における生成AI活用の類型と、導入時に検討すべきリスク・ガバナンスの論点を整理できる。</li>
+            </ol>
+          </section>
+
+          <section id="keywords" class="block" aria-labelledby="keywords-title">
+            <p class="block-label">02 — Keywords</p>
+            <h2 id="keywords-title">キーワード</h2>
+            <p>講義で出てくる主な用語です。復習の際に、それぞれを自分の言葉で説明できるか確かめてください。</p>
+            <ul class="keyword-list">
+              <li>人工知能（AI）</li>
+              <li>機械学習</li>
+              <li>深層学習</li>
+              <li>生成AI</li>
+              <li>大規模言語モデル（LLM）</li>
+              <li>プロンプト</li>
+              <li>ハルシネーション</li>
+              <li>RAG（検索拡張生成）</li>
+              <li>AIエージェント</li>
+              <li>情報漏洩・シャドーAI</li>
+              <li>著作権</li>
+              <li>AIガバナンス</li>
+            </ul>
+          </section>
+
+          <section id="flow" class="block" aria-labelledby="flow-title">
+            <p class="block-label">03 — Flow</p>
+            <h2 id="flow-title">講義の流れ</h2>
+            <p>講義資料（ノート）は Teams に掲載します。ここでは各パートの要点を示します。</p>
+            <ol class="flow-list">
+              <li>
+                <div>
+                  <h3>AIの歴史と種類</h3>
+                  <p>記号処理・ルールベース（エキスパートシステム）、データから規則を学ぶ機械学習、画像・音声認識にブレイクスルーをもたらした深層学習、そして文章・画像・音声をつくり出す生成AI。何度かのブームと「冬の時代」をへて、現在に至る流れを整理します。</p>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <h3>生成AIのしくみを概観する</h3>
+                  <p>大規模言語モデルは「次の単語を予測する」モデルです。Transformer、事前学習と微調整、プロンプトとコンテキストといった基本用語を押さえ、得意なこと（文章生成・要約・翻訳・コード・アイデア出し）と苦手なこと（事実の正確さ・最新情報・計算・根拠の提示）を区別します。</p>
+                  <ul>
+                    <li>得意：生成・要約・翻訳・変換・下書き</li>
+                    <li>苦手：事実確認・最新情報・厳密な計算・出典</li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <h3>企業における生成AIの活用</h3>
+                  <p>文書作成・要約・翻訳、カスタマーサポート、社内知識の検索（RAG）、ソフトウェア開発、マーケティングなど活用の類型。個人利用から全社導入へ、自社データとの接続、AIエージェントによる業務自動化。生産性への効果と、仕事の中身そのものの変化。</p>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <h3>限界・リスクとガバナンス</h3>
+                  <p>ハルシネーション、機密情報の入力による漏洩、会社が把握していない利用（シャドーAI）、著作権と学習データ、バイアス、説明責任。利用ガイドラインの策定、人が最終判断に関与する設計、国内外のガイドライン・規制の動向。</p>
+                  <ul>
+                    <li>情報：機密・個人情報の扱い、シャドーAI</li>
+                    <li>法：著作権、規制・ガイドライン</li>
+                    <li>品質：ハルシネーション、バイアス、検証の体制</li>
+                  </ul>
+                </div>
+              </li>
+            </ol>
+          </section>
+
+          <section id="think" class="block" aria-labelledby="think-title">
+            <p class="block-label">04 — Think &amp; Post</p>
+            <h2 id="think-title">考えてみよう</h2>
+            <p>この回の Teams 投稿のテーマです。授業への参加度として評価します。</p>
+            <div class="think-box">
+              <p class="block-label">Teams投稿のテーマ</p>
+              <h3>生成AIを業務に取り入れた企業は、何を狙い、何を得て、何に悩んでいるか？</h3>
+              <p>実際の導入事例を通じて、活用の類型とリスクの論点を自分の言葉で確かめましょう。</p>
+              <ol>
+                <li>生成AIを業務に導入した企業の事例（ニュース記事、プレスリリース、事例紹介など）を1つ探す。</li>
+                <li>「導入の目的」「得られた効果」「懸念点・対策」の3点で整理する。</li>
+                <li>自分がその企業の担当者なら、次に何をAIに任せるか（任せないか）を一言添える。</li>
+              </ol>
+              <p class="think-note">事例の情報源（リンク）を明記してください。生成AIを使って調べた場合は、その旨と、出力を自分で確かめた点を書き添えてください。</p>
+            </div>
+          </section>
+
+          <section id="reading" class="block" aria-labelledby="reading-title">
+            <p class="block-label">05 — Reading</p>
+            <h2 id="reading-title">読んでみよう</h2>
+            <p>教科書は使用しません。参考文献は講義のなかで適宜紹介します。ここでは、関心に応じて手に取ってほしいものを挙げます（任意）。</p>
+            <ul class="reading-list">
+              <li><b>総務省・経済産業省「AI事業者ガイドライン」</b><span>日本におけるAIの開発・提供・利用の指針。企業がAIをどう扱うべきかを考える共通の出発点。</span></li>
+              <li><b>Vaswani, A. et al. (2017). Attention Is All You Need.</b><span>現在の大規模言語モデルの基盤となる Transformer を提案した論文。しくみに関心がある人向け。</span></li>
+              <li><b><a href="https://www.soumu.go.jp/johotsusintokei/whitepaper/" target="_blank" rel="noopener">総務省『情報通信白書』</a></b><span>生成AIの利用動向（企業・個人）に関する国内外の調査データ。</span></li>
+            </ul>
+          </section>
+
+          <section id="review" class="block" aria-labelledby="review-title">
+            <p class="block-label">06 — Review</p>
+            <h2 id="review-title">復習のポイント</h2>
+            <div class="review-box">
+              <p class="block-label">Teams のノートを見返しながら確認</p>
+              <ul>
+                <li>「生成AI」と、それ以前の「機械学習」との違いを説明できるか。</li>
+                <li>大規模言語モデルが苦手なことを3つ挙げ、それぞれの理由を言えるか。</li>
+                <li>企業が生成AIを導入する際のリスクを、「情報」「法」「品質」の観点で整理できるか。</li>
+              </ul>
+            </div>
+          </section>
+
+          <nav class="pager" aria-label="前後の回へ">
+            <a class="pager-prev" href="lecture06.html"><small>← 第6回</small><b>経営情報の基礎：企業（組織）とソーシャルメディア</b></a>
+            <a class="pager-next" href="lecture08.html"><small>第8回 →</small><b>つながり：ネットワークがもたらす企業の変化</b></a>
+          </nav>
+        </article>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div class="footer-brand">
+          <span class="brand-mark small" aria-hidden="true">KS</span>
+          <p><strong>企業診断ＡＢＣ 2026</strong><br /><span>河合勝彦 担当分（第6〜10回）</span></p>
+        </div>
+        <div class="footer-meta">
+          <a href="../">トップページへ <span aria-hidden="true">↑</span></a>
+          <small>© 2026 Katsuhiko Kawai</small>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
