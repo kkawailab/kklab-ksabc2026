@@ -304,6 +304,7 @@ button { font: inherit; }
 .session-item:last-child { border-bottom: 0; padding-bottom: 4px; }
 .session-no { padding-top: 3px; color: var(--accent); font-size: 11px; font-weight: 800; letter-spacing: .08em; white-space: nowrap; }
 .session-date { padding-top: 2px; color: rgba(255,255,255,.5); font-family: var(--serif); font-size: 13px; white-space: nowrap; }
+.session-date small { display: block; margin-top: 2px; color: var(--accent); font-family: var(--sans); font-size: 9px; font-weight: 800; letter-spacing: .08em; }
 .session-item h4 { margin: 0 0 6px; color: var(--white); font-size: 15px; font-weight: 700; letter-spacing: .02em; line-height: 1.5; }
 .session-item h4 a { border-bottom: 1px solid rgba(255,255,255,.28); transition: border-color 160ms ease, color 160ms ease; }
 .session-item h4 a:hover, .session-item h4 a:focus-visible { color: var(--accent); border-bottom-color: var(--accent); }
