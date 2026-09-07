@@ -14,6 +14,7 @@
 - `assets/css/style.css` — 共通スタイル（トップページ・ヘッダー・フッター）
 - `assets/css/pages.css` — 下層ページ用スタイル（`style.css` の後に読み込む）
 - `assets/js/main.js` — ヘッダーのメニュー開閉・スクロール時のナビ強調
+- `assets/favicon.svg` / `favicon.ico` / `favicon-16x16.png` / `favicon-32x32.png` / `apple-touch-icon.png` — サイトアイコン（元は `favicon.svg`。PNG/ICO は ImageMagick と Pillow で書き出し）
 - `.github/workflows/pages.yml` — GitHub Pages への自動デプロイ
 
 河合担当回の内容（シラバスより）:
@@ -42,6 +43,7 @@ python3 -m http.server 8000
 
 ## 更新履歴
 
+- 2026-09-07: favicon を追加（SVG / ICO / PNG / Apple Touch Icon。ネイビー地にアンバーの棒グラフ）
 - 2026-09-07: 11月23日（月・祝）が祝日授業日である旨をトップページ・講義一覧・第9回ページに明記
 - 2026-09-07: 河合担当回の日程（11月2日〜11月30日、毎週月曜2限 10:40–12:10）をトップページ・講義一覧・各講義ページに掲載
 - 2026-09-07: サイトを新規作成し、GitHub Pages で公開（トップページ、講義一覧、第6〜10回の講義ページ）

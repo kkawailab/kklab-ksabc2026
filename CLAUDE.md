@@ -22,6 +22,7 @@ python3 -m http.server 8000
 - `lectures/index.html` — lecture list; `lectures/lecture06.html`…`lecture10.html` — one page per session. Sub-pages reference root assets with `../`.
 - `assets/css/style.css` — shared styles (header, hero, top-page sections, footer). `assets/css/pages.css` — sub-page styles (page hero, lecture layout, blocks, pager); load it after `style.css`.
 - `assets/js/main.js` — mobile menu toggle, scrolled-header state, active nav link.
+- `assets/favicon.svg` is the icon source; `favicon.ico` (16/32/48), `favicon-16x16.png`, `favicon-32x32.png`, `apple-touch-icon.png` (180, square background) are exported from it (ImageMagick `-density` = px × 1.5 at 96 dpi, ICO via Pillow). Every page's `<head>` links ico + svg + apple-touch-icon; regenerate all of them together if the mark changes.
 - The official syllabus PDF is not kept in the repo. Course facts (session titles, evaluation, office hours) as reflected in `index.html` and `README.md` were taken from the 2026 syllabus; if the user provides a new syllabus, update all of them together.
 
 ## Conventions
