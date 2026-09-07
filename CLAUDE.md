@@ -22,7 +22,7 @@ python3 -m http.server 8000
 - `lectures/index.html` — lecture list; `lectures/lecture06.html`…`lecture10.html` — one page per session. Sub-pages reference root assets with `../`.
 - `assets/css/style.css` — shared styles (header, hero, top-page sections, footer). `assets/css/pages.css` — sub-page styles (page hero, lecture layout, blocks, pager); load it after `style.css`.
 - `assets/js/main.js` — mobile menu toggle, scrolled-header state, active nav link.
-- `シラバス詳細.pdf` (gitignored) — the official syllabus; the source of truth for course facts (schedule titles, evaluation, office hours).
+- The official syllabus PDF is not kept in the repo. Course facts (session titles, evaluation, office hours) as reflected in `index.html` and `README.md` were taken from the 2026 syllabus; if the user provides a new syllabus, update all of them together.
 
 ## Conventions
 
