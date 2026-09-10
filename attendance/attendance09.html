@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="企業診断ＡＢＣ 2026（河合担当分）第9回の出席確認クイズ。AIの基礎知識（生成AIの活用と限界）5問に全問正解すると、確認コード付きの出席カードが表示されます。" />
+    <meta name="theme-color" content="#0f1d33" />
+    <meta property="og:title" content="第9回 出席確認クイズ：生成AIの活用と限界｜企業診断ＡＢＣ 2026" />
+    <meta property="og:description" content="企業診断ＡＢＣ 2026（河合担当分）第9回の出席確認クイズ。AIの基礎知識（生成AIの活用と限界）5問に全問正解すると、確認コード付きの出席カードが表示されます。" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://kklab.mobi/kklab-ksabc2026/attendance/attendance09.html" />
+    <title>第9回 出席確認クイズ：生成AIの活用と限界｜企業診断ＡＢＣ 2026</title>
+    <link rel="canonical" href="https://kklab.mobi/kklab-ksabc2026/attendance/attendance09.html" />
+    <link rel="icon" href="../assets/favicon.ico" sizes="32x32" />
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" />
+    <link rel="stylesheet" href="../assets/css/style.css?v=20260910" />
+    <link rel="stylesheet" href="../assets/css/pages.css?v=20260910" />
+    <script src="../assets/js/main.js?v=20260910" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">本文へ移動</a>
+
+    <header class="site-header" data-header>
+      <div class="header-inner">
+        <a class="brand" href="../" aria-label="企業診断ＡＢＣ 2026 トップへ">
+          <span class="brand-mark" aria-hidden="true">KS</span>
+          <span class="brand-copy">
+            <strong>企業診断ＡＢＣ</strong>
+            <small>Kawai Section — 2026</small>
+          </span>
+        </a>
+
+        <button
+          class="menu-button"
+          type="button"
+          aria-expanded="false"
+          aria-controls="site-navigation"
+          data-menu-button
+        >
+          <span class="menu-button-lines" aria-hidden="true"></span>
+          <span class="sr-only">メニューを開く</span>
+        </button>
+
+        <nav id="site-navigation" class="site-nav" aria-label="メインナビゲーション" data-navigation>
+          <a href="../#overview">授業概要</a>
+          <a href="../#schedule">講義予定</a>
+          <a href="../lectures/">講義一覧</a>
+          <a href="./" class="is-active" aria-current="page">出席確認</a>
+          <a href="../#guide">評価・受講のしかた</a>
+          <a class="nav-contact" href="../#contact">問い合わせ</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <section id="top" class="page-hero" aria-labelledby="page-title">
+        <div class="container">
+          <ol class="breadcrumb" aria-label="パンくずリスト">
+            <li><a href="../">トップ</a></li>
+            <li><a href="./">出席確認</a></li>
+            <li>第9回</li>
+          </ol>
+          <p class="eyebrow"><span></span> Attendance 09 — AI Basics Quiz</p>
+          <h1 id="page-title"><small>第9回　出席確認クイズ</small>生成AIの活用と限界</h1>
+          <p class="page-lead">生成AIを仕事や学びに使うとき、何に気をつけるべきか。ハルシネーション、情報の取り扱い、プロンプトの工夫など、AIを使う側に必要な基礎知識を確認します。</p>
+          <ul class="page-meta" aria-label="この回の情報">
+            <li>第9回　XテックとDX：企業のデジタル戦略</li><li>11/23（月・祝） 2限 10:40–12:10・2-403</li><li class="is-accent">全5問・全問正解で出席カード</li>
+          </ul>
+        </div>
+      </section>
+
+      <div class="attendance-layout">
+        <div id="form-page">
+          <section class="quiz attendance" aria-labelledby="quiz-title">
+            <p class="block-label">Attendance quiz — 第9回</p>
+            <h2 id="quiz-title">AIの基礎知識クイズ：生成AIの活用と限界</h2>
+            <p class="quiz-lead">学籍番号と氏名を入力し、5問すべてに回答して「提出する」を押してください。全問正解で出席カードが表示されます。不正解があった場合は解説を読んで、もう一度回答できます。</p>
+
+            <div class="error" id="error-box" role="alert"></div>
+
+            <fieldset class="student-fields">
+              <legend class="sr-only">受講者情報</legend>
+              <label for="student-id">学籍番号</label>
+              <input type="text" id="student-id" autocomplete="off" inputmode="numeric" placeholder="例: 26123456" />
+
+              <label for="student-name">氏名（フルネーム）</label>
+              <input type="text" id="student-name" autocomplete="off" placeholder="例: 山田 太郎" />
+            </fieldset>
+
+            <fieldset>
+              <legend class="sr-only">クイズ</legend>
+                <div class="question" id="q1">
+                  <p><span class="qno">Q1.</span>生成AIの「ハルシネーション」とは何でしょうか？</p>
+                  <label class="choice"><input type="radio" name="q1" value="a" />AIが事実と異なる内容を、もっともらしく生成してしまうこと</label>
+                  <label class="choice"><input type="radio" name="q1" value="b" />AIが電力不足で動作を停止すること</label>
+                  <label class="choice"><input type="radio" name="q1" value="c" />AIが画像を高解像度に変換すること</label>
+                  <label class="choice"><input type="radio" name="q1" value="d" />利用者がAIに過度に依存してしまうこと</label>
+                  <div class="explain"><strong>【解説】</strong>ハルシネーション（幻覚）は、生成AIが存在しない文献や誤った事実を、自然で自信のある文章として生成してしまう現象です。出力は必ず確認が必要です。</div>
+                </div>
+                <div class="question" id="q2">
+                  <p><span class="qno">Q2.</span>生成AIの出力を仕事や学習に使うときの基本姿勢として最も適切なものはどれでしょうか？</p>
+                  <label class="choice"><input type="radio" name="q2" value="a" />出力の根拠や事実関係を確認したうえで、最終的な判断は人が行う</label>
+                  <label class="choice"><input type="radio" name="q2" value="b" />AIの出力は常に正しいので、そのまま採用する</label>
+                  <label class="choice"><input type="radio" name="q2" value="c" />回答が長く詳しいほど信頼できると考える</label>
+                  <label class="choice"><input type="radio" name="q2" value="d" />AIは使わないのがもっとも安全なので一切使わない</label>
+                  <div class="explain"><strong>【解説】</strong>生成AIの出力には誤りが含まれることがあります。根拠や事実を確認し、AIを補助として使いながら、最終的な判断と責任は人が持つのが基本です。</div>
+                </div>
+                <div class="question" id="q3">
+                  <p><span class="qno">Q3.</span>生成AIサービスに情報を入力するときの注意として最も適切なものはどれでしょうか？</p>
+                  <label class="choice"><input type="radio" name="q3" value="a" />利用規約やデータの取り扱いを確認し、個人情報や機密情報は原則として入力しない</label>
+                  <label class="choice"><input type="radio" name="q3" value="b" />精度が上がるので、社外秘の情報も積極的に入力する</label>
+                  <label class="choice"><input type="radio" name="q3" value="c" />匿名で使っていれば、どんな情報を入力しても問題ない</label>
+                  <label class="choice"><input type="radio" name="q3" value="d" />無料版のサービスなら、入力した情報は必ず安全に扱われる</label>
+                  <div class="explain"><strong>【解説】</strong>入力した内容がサービス側に保存されたり、学習に使われたりする場合があります。利用規約とデータの取り扱いを確認し、個人情報や機密情報は入力しないのが原則です。組織のルールがあればそれに従います。</div>
+                </div>
+                <div class="question" id="q4">
+                  <p><span class="qno">Q4.</span>現在の生成AIが得意とする業務の例として最も適切なものはどれでしょうか？</p>
+                  <label class="choice"><input type="radio" name="q4" value="a" />文章の下書き、要約、翻訳、アイデア出し</label>
+                  <label class="choice"><input type="radio" name="q4" value="b" />最新の株価や為替レートを必ず正確に答えること</label>
+                  <label class="choice"><input type="radio" name="q4" value="c" />法的な責任を負う最終決定を代わりに行うこと</label>
+                  <label class="choice"><input type="radio" name="q4" value="d" />将来の出来事を確実に予測すること</label>
+                  <div class="explain"><strong>【解説】</strong>生成AIは、文章の下書き・要約・翻訳・アイデア出し・プログラムの補助など、言葉を扱う作業が得意です。最新情報の正確な提示や、責任を伴う最終決定は人が担う必要があります。</div>
+                </div>
+                <div class="question" id="q5">
+                  <p><span class="qno">Q5.</span>生成AIからよい出力を得るためのプロンプトの工夫として最も適切なものはどれでしょうか？</p>
+                  <label class="choice"><input type="radio" name="q5" value="a" />目的・前提条件・期待する出力の形式を、具体的に伝える</label>
+                  <label class="choice"><input type="radio" name="q5" value="b" />できるだけ短く、あいまいに書く</label>
+                  <label class="choice"><input type="radio" name="q5" value="c" />同じ質問を一度に何百回も送る</label>
+                  <label class="choice"><input type="radio" name="q5" value="d" />すべて大文字の英語で書く</label>
+                  <div class="explain"><strong>【解説】</strong>AIは与えられた文脈に基づいて出力するため、「何のために」「どんな条件で」「どんな形式で」ほしいのかを具体的に伝えると、出力の質が上がります。</div>
+                </div>
+            </fieldset>
+
+            <button type="button" id="submit-btn">提出する <span aria-hidden="true">→</span></button>
+          </section>
+
+          <nav class="pager" aria-label="前後の回へ">
+            <a class="pager-prev" href="attendance08.html"><small>← 第8回</small><b>機械学習とデータ</b></a>
+            <a class="pager-next" href="attendance10.html"><small>第10回 →</small><b>AIのリスク・倫理・ガバナンス</b></a>
+          </nav>
+          <p class="attendance-back"><a href="./">← 出席確認一覧に戻る</a></p>
+        </div>
+
+        <div class="result-card" id="result" hidden>
+          <p class="block-label">Attendance confirmed</p>
+          <h2>全問正解です！出席を確認しました</h2>
+          <table class="result-table">
+            <tr><th>科目</th><td>企業診断ＡＢＣ 2026（河合担当分）</td></tr>
+            <tr><th>講義回</th><td>第9回（11/23） XテックとDX：企業のデジタル戦略</td></tr>
+            <tr><th>学籍番号</th><td id="result-id"></td></tr>
+            <tr><th>氏名</th><td id="result-name"></td></tr>
+            <tr><th>提出時間</th><td id="result-time"></td></tr>
+            <tr><th>確認コード</th><td class="code" id="result-code"></td></tr>
+          </table>
+          <p class="time-note">提出時間はサーバー時刻（日本時間）に基づきます。</p>
+          <p class="notice">この画面のスクリーンショットを撮り、Teams に提出してください（提出先は講義で案内します）。</p>
+        </div>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div class="footer-brand">
+          <span class="brand-mark small" aria-hidden="true">KS</span>
+          <p><strong>企業診断ＡＢＣ 2026</strong><br /><span>河合勝彦 担当分（第6〜10回）</span></p>
+        </div>
+        <div class="footer-meta">
+          <a href="./">出席確認一覧</a>
+          <a href="../">トップページへ <span aria-hidden="true">↑</span></a>
+          <small>© 2026 Katsuhiko Kawai</small>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../assets/js/attendance.js?v=20260910"></script>
+    <script>
+      initAttendanceQuiz({ pageId: "ksabc2026-attendance09", answers: {"q1": "a", "q2": "a", "q3": "a", "q4": "a", "q5": "a"}, questionCount: 5 });
+    </script>
+  </body>
+</html>

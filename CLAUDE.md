@@ -20,6 +20,7 @@ python3 -m http.server 8000
 
 - `index.html` — top page. Sections: `#overview`, `#news`, `#schedule`, `#materials`, `#guide`, `#contact`.
 - `lectures/index.html` — lecture list; `lectures/lecture06.html`…`lecture10.html` — one page per session. Sub-pages reference root assets with `../`.
+- `attendance/index.html` — attendance-quiz list; `attendance/attendance06.html`…`attendance10.html` — one AI-basics quiz (5 four-choice questions) per session. In each quiz the first `.choice` of every question is the correct answer (`value="a"`); `assets/js/attendance.js` shuffles choices, checks answers, fetches server time (timeapi.io, fallback worldtimeapi.org) and computes the SHA-256 confirmation code. Do not change the code computation or time format, or previously issued codes can no longer be verified.
 - `assets/css/style.css` — shared styles (header, hero, top-page sections, footer). `assets/css/pages.css` — sub-page styles (page hero, lecture layout, blocks, pager); load it after `style.css`.
 - `assets/js/main.js` — mobile menu toggle, scrolled-header state, active nav link.
 - `assets/favicon.svg` is the icon source; `favicon.ico` (16/32/48), `favicon-16x16.png`, `favicon-32x32.png`, `apple-touch-icon.png` (180, square background) are exported from it (ImageMagick `-density` = px × 1.5 at 96 dpi, ICO via Pillow). Every page's `<head>` links ico + svg + apple-touch-icon; regenerate all of them together if the mark changes.

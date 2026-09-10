@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="企業診断ＡＢＣ 2026（河合担当分）第8回の出席確認クイズ。AIの基礎知識（機械学習とデータ）5問に全問正解すると、確認コード付きの出席カードが表示されます。" />
+    <meta name="theme-color" content="#0f1d33" />
+    <meta property="og:title" content="第8回 出席確認クイズ：機械学習とデータ｜企業診断ＡＢＣ 2026" />
+    <meta property="og:description" content="企業診断ＡＢＣ 2026（河合担当分）第8回の出席確認クイズ。AIの基礎知識（機械学習とデータ）5問に全問正解すると、確認コード付きの出席カードが表示されます。" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://kklab.mobi/kklab-ksabc2026/attendance/attendance08.html" />
+    <title>第8回 出席確認クイズ：機械学習とデータ｜企業診断ＡＢＣ 2026</title>
+    <link rel="canonical" href="https://kklab.mobi/kklab-ksabc2026/attendance/attendance08.html" />
+    <link rel="icon" href="../assets/favicon.ico" sizes="32x32" />
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" />
+    <link rel="stylesheet" href="../assets/css/style.css?v=20260910" />
+    <link rel="stylesheet" href="../assets/css/pages.css?v=20260910" />
+    <script src="../assets/js/main.js?v=20260910" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">本文へ移動</a>
+
+    <header class="site-header" data-header>
+      <div class="header-inner">
+        <a class="brand" href="../" aria-label="企業診断ＡＢＣ 2026 トップへ">
+          <span class="brand-mark" aria-hidden="true">KS</span>
+          <span class="brand-copy">
+            <strong>企業診断ＡＢＣ</strong>
+            <small>Kawai Section — 2026</small>
+          </span>
+        </a>
+
+        <button
+          class="menu-button"
+          type="button"
+          aria-expanded="false"
+          aria-controls="site-navigation"
+          data-menu-button
+        >
+          <span class="menu-button-lines" aria-hidden="true"></span>
+          <span class="sr-only">メニューを開く</span>
+        </button>
+
+        <nav id="site-navigation" class="site-nav" aria-label="メインナビゲーション" data-navigation>
+          <a href="../#overview">授業概要</a>
+          <a href="../#schedule">講義予定</a>
+          <a href="../lectures/">講義一覧</a>
+          <a href="./" class="is-active" aria-current="page">出席確認</a>
+          <a href="../#guide">評価・受講のしかた</a>
+          <a class="nav-contact" href="../#contact">問い合わせ</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <section id="top" class="page-hero" aria-labelledby="page-title">
+        <div class="container">
+          <ol class="breadcrumb" aria-label="パンくずリスト">
+            <li><a href="../">トップ</a></li>
+            <li><a href="./">出席確認</a></li>
+            <li>第8回</li>
+          </ol>
+          <p class="eyebrow"><span></span> Attendance 08 — AI Basics Quiz</p>
+          <h1 id="page-title"><small>第8回　出席確認クイズ</small>機械学習とデータ</h1>
+          <p class="page-lead">AIの中核にある機械学習は、データから何をどのように学ぶのか。教師あり学習、ニューラルネットワーク、過学習など、AIとデータの関係についての基礎知識を確認します。</p>
+          <ul class="page-meta" aria-label="この回の情報">
+            <li>第8回　つながり：ネットワークがもたらす企業の変化</li><li>11/16（月） 2限 10:40–12:10・2-403</li><li class="is-accent">全5問・全問正解で出席カード</li>
+          </ul>
+        </div>
+      </section>
+
+      <div class="attendance-layout">
+        <div id="form-page">
+          <section class="quiz attendance" aria-labelledby="quiz-title">
+            <p class="block-label">Attendance quiz — 第8回</p>
+            <h2 id="quiz-title">AIの基礎知識クイズ：機械学習とデータ</h2>
+            <p class="quiz-lead">学籍番号と氏名を入力し、5問すべてに回答して「提出する」を押してください。全問正解で出席カードが表示されます。不正解があった場合は解説を読んで、もう一度回答できます。</p>
+
+            <div class="error" id="error-box" role="alert"></div>
+
+            <fieldset class="student-fields">
+              <legend class="sr-only">受講者情報</legend>
+              <label for="student-id">学籍番号</label>
+              <input type="text" id="student-id" autocomplete="off" inputmode="numeric" placeholder="例: 26123456" />
+
+              <label for="student-name">氏名（フルネーム）</label>
+              <input type="text" id="student-name" autocomplete="off" placeholder="例: 山田 太郎" />
+            </fieldset>
+
+            <fieldset>
+              <legend class="sr-only">クイズ</legend>
+                <div class="question" id="q1">
+                  <p><span class="qno">Q1.</span>「機械学習」の説明として最も適切なものはどれでしょうか？</p>
+                  <label class="choice"><input type="radio" name="q1" value="a" />データから規則やパターンを、コンピュータが自動的に学び取る手法</label>
+                  <label class="choice"><input type="radio" name="q1" value="b" />人がすべての判断ルールを手作業でプログラムする手法</label>
+                  <label class="choice"><input type="radio" name="q1" value="c" />工場の機械の故障を学ぶための整備技術</label>
+                  <label class="choice"><input type="radio" name="q1" value="d" />機械翻訳ソフトの別名</label>
+                  <div class="explain"><strong>【解説】</strong>機械学習は、人がルールを一つひとつ書くのではなく、データからコンピュータが自動的に規則やパターンを学ぶ手法です。現在のAIの中核的な技術です。</div>
+                </div>
+                <div class="question" id="q2">
+                  <p><span class="qno">Q2.</span>「教師あり学習」の説明として最も適切なものはどれでしょうか？</p>
+                  <label class="choice"><input type="radio" name="q2" value="a" />正解（ラベル）が付いたデータを使って、入力と正解の関係を学習する</label>
+                  <label class="choice"><input type="radio" name="q2" value="b" />正解のないデータから、似たもの同士のグループを見つける</label>
+                  <label class="choice"><input type="radio" name="q2" value="c" />試行錯誤の結果に与えられる報酬をもとに学習する</label>
+                  <label class="choice"><input type="radio" name="q2" value="d" />教師が教室でAIに授業をする</label>
+                  <div class="explain"><strong>【解説】</strong>教師あり学習は、「この画像は猫」「このメールは迷惑メール」のように正解ラベルが付いたデータで学習する方法です。正解のないデータからグループを見つけるのは教師なし学習、報酬をもとに学ぶのは強化学習です。</div>
+                </div>
+                <div class="question" id="q3">
+                  <p><span class="qno">Q3.</span>学習データとAIの性能の関係について、最も適切なものはどれでしょうか？</p>
+                  <label class="choice"><input type="radio" name="q3" value="a" />学習データの量・質・偏りが、AIの性能や公平性に大きく影響する</label>
+                  <label class="choice"><input type="radio" name="q3" value="b" />学習データはAIの性能にほとんど影響しない</label>
+                  <label class="choice"><input type="radio" name="q3" value="c" />学習データは少ないほど正確なAIになる</label>
+                  <label class="choice"><input type="radio" name="q3" value="d" />学習データの偏りはAIが自動的に補正するので気にしなくてよい</label>
+                  <div class="explain"><strong>【解説】</strong>AIは学習データからパターンを学ぶため、データの量や質、偏りがそのまま性能や公平性に反映されます。偏ったデータで学習したAIは、偏った判断をしてしまいます。</div>
+                </div>
+                <div class="question" id="q4">
+                  <p><span class="qno">Q4.</span>深層学習で使われる「ニューラルネットワーク」は、何をヒントにしたモデルでしょうか？</p>
+                  <label class="choice"><input type="radio" name="q4" value="a" />脳の神経細胞（ニューロン）のつながり</label>
+                  <label class="choice"><input type="radio" name="q4" value="b" />都市の道路網</label>
+                  <label class="choice"><input type="radio" name="q4" value="c" />電力の送電網</label>
+                  <label class="choice"><input type="radio" name="q4" value="d" />会社の組織図</label>
+                  <div class="explain"><strong>【解説】</strong>ニューラルネットワークは、脳の神経細胞（ニューロン）が信号をやり取りするしくみをヒントにした数理モデルです。層を深く重ねたものが深層学習（ディープラーニング）です。</div>
+                </div>
+                <div class="question" id="q5">
+                  <p><span class="qno">Q5.</span>機械学習における「過学習（オーバーフィッティング）」の説明として最も適切なものはどれでしょうか？</p>
+                  <label class="choice"><input type="radio" name="q5" value="a" />学習データに過剰に適合してしまい、新しいデータに対する性能が落ちること</label>
+                  <label class="choice"><input type="radio" name="q5" value="b" />学習時間が長すぎて電気代がかかりすぎること</label>
+                  <label class="choice"><input type="radio" name="q5" value="c" />学習をまったく行わないこと</label>
+                  <label class="choice"><input type="radio" name="q5" value="d" />学習データが多すぎてコンピュータのメモリが不足すること</label>
+                  <div class="explain"><strong>【解説】</strong>過学習は、学習データの細かな特徴やノイズまで覚えてしまい、未知の新しいデータに対してうまく働かなくなる現象です。AIの性能は、学習に使っていないデータで評価する必要があります。</div>
+                </div>
+            </fieldset>
+
+            <button type="button" id="submit-btn">提出する <span aria-hidden="true">→</span></button>
+          </section>
+
+          <nav class="pager" aria-label="前後の回へ">
+            <a class="pager-prev" href="attendance07.html"><small>← 第7回</small><b>生成AIと大規模言語モデル</b></a>
+            <a class="pager-next" href="attendance09.html"><small>第9回 →</small><b>生成AIの活用と限界</b></a>
+          </nav>
+          <p class="attendance-back"><a href="./">← 出席確認一覧に戻る</a></p>
+        </div>
+
+        <div class="result-card" id="result" hidden>
+          <p class="block-label">Attendance confirmed</p>
+          <h2>全問正解です！出席を確認しました</h2>
+          <table class="result-table">
+            <tr><th>科目</th><td>企業診断ＡＢＣ 2026（河合担当分）</td></tr>
+            <tr><th>講義回</th><td>第8回（11/16） つながり：ネットワークがもたらす企業の変化</td></tr>
+            <tr><th>学籍番号</th><td id="result-id"></td></tr>
+            <tr><th>氏名</th><td id="result-name"></td></tr>
+            <tr><th>提出時間</th><td id="result-time"></td></tr>
+            <tr><th>確認コード</th><td class="code" id="result-code"></td></tr>
+          </table>
+          <p class="time-note">提出時間はサーバー時刻（日本時間）に基づきます。</p>
+          <p class="notice">この画面のスクリーンショットを撮り、Teams に提出してください（提出先は講義で案内します）。</p>
+        </div>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div class="footer-brand">
+          <span class="brand-mark small" aria-hidden="true">KS</span>
+          <p><strong>企業診断ＡＢＣ 2026</strong><br /><span>河合勝彦 担当分（第6〜10回）</span></p>
+        </div>
+        <div class="footer-meta">
+          <a href="./">出席確認一覧</a>
+          <a href="../">トップページへ <span aria-hidden="true">↑</span></a>
+          <small>© 2026 Katsuhiko Kawai</small>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../assets/js/attendance.js?v=20260910"></script>
+    <script>
+      initAttendanceQuiz({ pageId: "ksabc2026-attendance08", answers: {"q1": "a", "q2": "a", "q3": "a", "q4": "a", "q5": "a"}, questionCount: 5 });
+    </script>
+  </body>
+</html>

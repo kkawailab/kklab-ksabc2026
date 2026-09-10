@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="企業診断ＡＢＣ 2026（河合担当分）第7回の出席確認クイズ。AIの基礎知識（生成AIと大規模言語モデル）5問に全問正解すると、確認コード付きの出席カードが表示されます。" />
+    <meta name="theme-color" content="#0f1d33" />
+    <meta property="og:title" content="第7回 出席確認クイズ：生成AIと大規模言語モデル｜企業診断ＡＢＣ 2026" />
+    <meta property="og:description" content="企業診断ＡＢＣ 2026（河合担当分）第7回の出席確認クイズ。AIの基礎知識（生成AIと大規模言語モデル）5問に全問正解すると、確認コード付きの出席カードが表示されます。" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://kklab.mobi/kklab-ksabc2026/attendance/attendance07.html" />
+    <title>第7回 出席確認クイズ：生成AIと大規模言語モデル｜企業診断ＡＢＣ 2026</title>
+    <link rel="canonical" href="https://kklab.mobi/kklab-ksabc2026/attendance/attendance07.html" />
+    <link rel="icon" href="../assets/favicon.ico" sizes="32x32" />
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" />
+    <link rel="stylesheet" href="../assets/css/style.css?v=20260910" />
+    <link rel="stylesheet" href="../assets/css/pages.css?v=20260910" />
+    <script src="../assets/js/main.js?v=20260910" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">本文へ移動</a>
+
+    <header class="site-header" data-header>
+      <div class="header-inner">
+        <a class="brand" href="../" aria-label="企業診断ＡＢＣ 2026 トップへ">
+          <span class="brand-mark" aria-hidden="true">KS</span>
+          <span class="brand-copy">
+            <strong>企業診断ＡＢＣ</strong>
+            <small>Kawai Section — 2026</small>
+          </span>
+        </a>
+
+        <button
+          class="menu-button"
+          type="button"
+          aria-expanded="false"
+          aria-controls="site-navigation"
+          data-menu-button
+        >
+          <span class="menu-button-lines" aria-hidden="true"></span>
+          <span class="sr-only">メニューを開く</span>
+        </button>
+
+        <nav id="site-navigation" class="site-nav" aria-label="メインナビゲーション" data-navigation>
+          <a href="../#overview">授業概要</a>
+          <a href="../#schedule">講義予定</a>
+          <a href="../lectures/">講義一覧</a>
+          <a href="./" class="is-active" aria-current="page">出席確認</a>
+          <a href="../#guide">評価・受講のしかた</a>
+          <a class="nav-contact" href="../#contact">問い合わせ</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <section id="top" class="page-hero" aria-labelledby="page-title">
+        <div class="container">
+          <ol class="breadcrumb" aria-label="パンくずリスト">
+            <li><a href="../">トップ</a></li>
+            <li><a href="./">出席確認</a></li>
+            <li>第7回</li>
+          </ol>
+          <p class="eyebrow"><span></span> Attendance 07 — AI Basics Quiz</p>
+          <h1 id="page-title"><small>第7回　出席確認クイズ</small>生成AIと大規模言語モデル</h1>
+          <p class="page-lead">ChatGPT などの生成AIは、どのようなしくみで文章をつくり出しているのか。大規模言語モデル（LLM）、プロンプト、基盤モデルといった基本用語を確認します。</p>
+          <ul class="page-meta" aria-label="この回の情報">
+            <li>第7回　人工知能：企業における生成AI</li><li>11/9（月） 2限 10:40–12:10・2-403</li><li class="is-accent">全5問・全問正解で出席カード</li>
+          </ul>
+        </div>
+      </section>
+
+      <div class="attendance-layout">
+        <div id="form-page">
+          <section class="quiz attendance" aria-labelledby="quiz-title">
+            <p class="block-label">Attendance quiz — 第7回</p>
+            <h2 id="quiz-title">AIの基礎知識クイズ：生成AIと大規模言語モデル</h2>
+            <p class="quiz-lead">学籍番号と氏名を入力し、5問すべてに回答して「提出する」を押してください。全問正解で出席カードが表示されます。不正解があった場合は解説を読んで、もう一度回答できます。</p>
+
+            <div class="error" id="error-box" role="alert"></div>
+
+            <fieldset class="student-fields">
+              <legend class="sr-only">受講者情報</legend>
+              <label for="student-id">学籍番号</label>
+              <input type="text" id="student-id" autocomplete="off" inputmode="numeric" placeholder="例: 26123456" />
+
+              <label for="student-name">氏名（フルネーム）</label>
+              <input type="text" id="student-name" autocomplete="off" placeholder="例: 山田 太郎" />
+            </fieldset>
+
+            <fieldset>
+              <legend class="sr-only">クイズ</legend>
+                <div class="question" id="q1">
+                  <p><span class="qno">Q1.</span>「生成AI（Generative AI）」の説明として最も適切なものはどれでしょうか？</p>
+                  <label class="choice"><input type="radio" name="q1" value="a" />学習したパターンをもとに、文章・画像・音声などの新しいコンテンツを生成するAI</label>
+                  <label class="choice"><input type="radio" name="q1" value="b" />与えられたデータを分類するだけのAI</label>
+                  <label class="choice"><input type="radio" name="q1" value="c" />家電を遠隔操作するための技術</label>
+                  <label class="choice"><input type="radio" name="q1" value="d" />コンピュータウイルスを検知するソフトウェア</label>
+                  <div class="explain"><strong>【解説】</strong>生成AIは、大量のデータから学習したパターンをもとに、文章・画像・音声・プログラムなどの新しいコンテンツを生成するAIです。</div>
+                </div>
+                <div class="question" id="q2">
+                  <p><span class="qno">Q2.</span>「LLM」は何の略でしょうか？</p>
+                  <label class="choice"><input type="radio" name="q2" value="a" />Large Language Model（大規模言語モデル）</label>
+                  <label class="choice"><input type="radio" name="q2" value="b" />Local Learning Machine（局所学習機械）</label>
+                  <label class="choice"><input type="radio" name="q2" value="c" />Long Logic Memory（長期論理記憶）</label>
+                  <label class="choice"><input type="radio" name="q2" value="d" />Linked List Method（連結リスト法）</label>
+                  <div class="explain"><strong>【解説】</strong>LLMは Large Language Model（大規模言語モデル）の略です。膨大なテキストで学習した、文章を理解・生成するためのモデルで、ChatGPT などの生成AIサービスの中核になっています。</div>
+                </div>
+                <div class="question" id="q3">
+                  <p><span class="qno">Q3.</span>大規模言語モデルが文章を生成する基本的なしくみとして最も適切なものはどれでしょうか？</p>
+                  <label class="choice"><input type="radio" name="q3" value="a" />これまでの文脈に続く確からしい単語（トークン）を、次々に予測して並べていく</label>
+                  <label class="choice"><input type="radio" name="q3" value="b" />インターネットをリアルタイムに検索し、見つけたページの文章をそのまま貼り付ける</label>
+                  <label class="choice"><input type="radio" name="q3" value="c" />あらかじめ人が登録しておいた定型文の中から1つを選んで表示する</label>
+                  <label class="choice"><input type="radio" name="q3" value="d" />裏側で人間のオペレーターが入力している</label>
+                  <div class="explain"><strong>【解説】</strong>大規模言語モデルは、与えられた文脈に続く確からしい単語（トークン）を確率的に予測し、それを繰り返して文章を生成します。このしくみのため、もっともらしいが誤った文章を生成することもあります。</div>
+                </div>
+                <div class="question" id="q4">
+                  <p><span class="qno">Q4.</span>「プロンプト」とは何でしょうか？</p>
+                  <label class="choice"><input type="radio" name="q4" value="a" />利用者が生成AIに与える指示や質問の文章</label>
+                  <label class="choice"><input type="radio" name="q4" value="b" />AIの学習に使われたデータの全体</label>
+                  <label class="choice"><input type="radio" name="q4" value="c" />AIを動かすコンピュータ（GPU）の型番</label>
+                  <label class="choice"><input type="radio" name="q4" value="d" />AIが出力する画像のファイル形式</label>
+                  <div class="explain"><strong>【解説】</strong>プロンプトは、利用者が生成AIに入力する指示や質問のことです。プロンプトの書き方によって、AIの出力の質は大きく変わります。</div>
+                </div>
+                <div class="question" id="q5">
+                  <p><span class="qno">Q5.</span>「基盤モデル（ファウンデーションモデル）」の説明として最も適切なものはどれでしょうか？</p>
+                  <label class="choice"><input type="radio" name="q5" value="a" />大量のデータで事前学習され、さまざまな用途に応用できる汎用的なモデル</label>
+                  <label class="choice"><input type="radio" name="q5" value="b" />特定の1社の業務だけのために、少量のデータで作られたモデル</label>
+                  <label class="choice"><input type="radio" name="q5" value="c" />建物の基礎部分を設計するための建築用ソフトウェア</label>
+                  <label class="choice"><input type="radio" name="q5" value="d" />AIを動かすサーバーの物理的な土台</label>
+                  <div class="explain"><strong>【解説】</strong>基盤モデルは、大量のデータで事前学習され、文章生成・要約・翻訳・分類など多くの用途に応用できる汎用的なモデルです。GPT や Claude、Gemini などの大規模言語モデルはその代表例です。</div>
+                </div>
+            </fieldset>
+
+            <button type="button" id="submit-btn">提出する <span aria-hidden="true">→</span></button>
+          </section>
+
+          <nav class="pager" aria-label="前後の回へ">
+            <a class="pager-prev" href="attendance06.html"><small>← 第6回</small><b>AIとは何か</b></a>
+            <a class="pager-next" href="attendance08.html"><small>第8回 →</small><b>機械学習とデータ</b></a>
+          </nav>
+          <p class="attendance-back"><a href="./">← 出席確認一覧に戻る</a></p>
+        </div>
+
+        <div class="result-card" id="result" hidden>
+          <p class="block-label">Attendance confirmed</p>
+          <h2>全問正解です！出席を確認しました</h2>
+          <table class="result-table">
+            <tr><th>科目</th><td>企業診断ＡＢＣ 2026（河合担当分）</td></tr>
+            <tr><th>講義回</th><td>第7回（11/9） 人工知能：企業における生成AI</td></tr>
+            <tr><th>学籍番号</th><td id="result-id"></td></tr>
+            <tr><th>氏名</th><td id="result-name"></td></tr>
+            <tr><th>提出時間</th><td id="result-time"></td></tr>
+            <tr><th>確認コード</th><td class="code" id="result-code"></td></tr>
+          </table>
+          <p class="time-note">提出時間はサーバー時刻（日本時間）に基づきます。</p>
+          <p class="notice">この画面のスクリーンショットを撮り、Teams に提出してください（提出先は講義で案内します）。</p>
+        </div>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div class="footer-brand">
+          <span class="brand-mark small" aria-hidden="true">KS</span>
+          <p><strong>企業診断ＡＢＣ 2026</strong><br /><span>河合勝彦 担当分（第6〜10回）</span></p>
+        </div>
+        <div class="footer-meta">
+          <a href="./">出席確認一覧</a>
+          <a href="../">トップページへ <span aria-hidden="true">↑</span></a>
+          <small>© 2026 Katsuhiko Kawai</small>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../assets/js/attendance.js?v=20260910"></script>
+    <script>
+      initAttendanceQuiz({ pageId: "ksabc2026-attendance07", answers: {"q1": "a", "q2": "a", "q3": "a", "q4": "a", "q5": "a"}, questionCount: 5 });
+    </script>
+  </body>
+</html>
