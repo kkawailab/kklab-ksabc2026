@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="企業診断ＡＢＣ 2026（河合担当分・第6〜10回）の講義アンケートの集計結果。各回の回答分布と、設問に対応する事実・出典、表れやすいバイアスの解説を表示します。" />
+    <meta name="theme-color" content="#0f1d33" />
+    <meta property="og:title" content="講義アンケート 集計結果｜企業診断ＡＢＣ 2026" />
+    <meta property="og:description" content="企業診断ＡＢＣ 2026（河合担当分・第6〜10回）の講義アンケートの集計結果。各回の回答分布と、設問に対応する事実・出典、表れやすいバイアスの解説を表示します。" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://kklab.mobi/kklab-ksabc2026/survey/results.html" />
+    <title>講義アンケート 集計結果｜企業診断ＡＢＣ 2026</title>
+    <link rel="canonical" href="https://kklab.mobi/kklab-ksabc2026/survey/results.html" />
+    <link rel="icon" href="../assets/favicon.ico" sizes="32x32" />
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" />
+    <link rel="stylesheet" href="../assets/css/style.css?v=20261018" />
+    <link rel="stylesheet" href="../assets/css/pages.css?v=20261018" />
+    <script src="../assets/js/main.js?v=20261018" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">本文へ移動</a>
+
+    <header class="site-header" data-header>
+      <div class="header-inner">
+        <a class="brand" href="../" aria-label="企業診断ＡＢＣ 2026 トップへ">
+          <span class="brand-mark" aria-hidden="true">KS</span>
+          <span class="brand-copy">
+            <strong>企業診断ＡＢＣ</strong>
+            <small>Kawai Section — 2026</small>
+          </span>
+        </a>
+
+        <button
+          class="menu-button"
+          type="button"
+          aria-expanded="false"
+          aria-controls="site-navigation"
+          data-menu-button
+        >
+          <span class="menu-button-lines" aria-hidden="true"></span>
+          <span class="sr-only">メニューを開く</span>
+        </button>
+
+        <nav id="site-navigation" class="site-nav" aria-label="メインナビゲーション" data-navigation>
+          <a href="../#overview">授業概要</a>
+          <a href="../#schedule">講義予定</a>
+          <a href="../lectures/">講義一覧</a>
+          <a href="../attendance/">出席確認</a>
+          <a href="./" class="is-active" aria-current="page">アンケート</a>
+          <a href="../#guide">評価・受講のしかた</a>
+          <a class="nav-contact" href="../#contact">問い合わせ</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <section id="top" class="page-hero" aria-labelledby="page-title">
+        <div class="container">
+          <ol class="breadcrumb" aria-label="パンくずリスト">
+            <li><a href="../">トップ</a></li>
+            <li><a href="./">アンケート</a></li>
+            <li>集計結果</li>
+          </ol>
+          <p class="eyebrow"><span></span> Survey Results — Lectures 06–10</p>
+          <h1 id="page-title"><small>講義アンケート</small>集計結果</h1>
+          <p class="page-lead">各回の講義アンケートの回答分布です。教員が集計を公開するまでは回答数だけが表示されます。公開後は、全体の分布に加えて、設問に対応する事実・出典と、そこに表れやすいバイアス・誤解の解説が表示されます。講義中は自動的に更新されます。</p>
+          <ul class="page-meta" aria-label="集計結果ページの情報">
+            <li>第6〜10回</li>
+            <li>回答は匿名</li>
+            <li class="is-accent">10秒ごとに自動更新</li>
+          </ul>
+        </div>
+      </section>
+
+      <div class="container results-layout">
+        <nav class="results-tabs" id="results-tabs" aria-label="回の選択"></nav>
+
+        <section class="results-head" aria-live="polite">
+          <div>
+            <p class="block-label" id="results-eyebrow">Survey</p>
+            <h2 id="results-title">読み込み中…</h2>
+            <p class="results-lecture" id="results-lecture"></p>
+          </div>
+          <div class="results-stats">
+            <div class="stat"><small>回答数</small><b id="results-count">–</b></div>
+            <div class="stat"><small>状態</small><b class="is-text" id="results-state">–</b></div>
+            <label class="auto-toggle"><input type="checkbox" id="auto-refresh" checked /> 自動更新</label>
+          </div>
+        </section>
+
+        <p class="results-note" id="results-note"></p>
+        <div class="results-body" id="results-body"></div>
+        <noscript><p class="error" style="display: block">集計結果の表示には JavaScript を有効にしてください。</p></noscript>
+
+        <details class="admin-panel" id="admin-panel">
+          <summary>Instructor — 教員用</summary>
+          <div class="admin-panel-inner">
+            <div id="admin-login">
+              <p>集計の公開・非公開、受付の締切・再開、CSV のダウンロード、回答のリセットには教員用キーが必要です。キーはこの端末に保存されます。</p>
+              <form class="admin-form" id="admin-form">
+                <label class="sr-only" for="admin-key">教員用キー</label>
+                <input type="password" id="admin-key" autocomplete="off" placeholder="教員用キー" />
+                <button type="submit" class="button-ghost">ログイン</button>
+              </form>
+            </div>
+            <div id="admin-tools" hidden>
+              <p>表示中の回に対する操作です。集計を公開すると、学生の画面にも回答分布と解説が表示されます。</p>
+              <div class="admin-actions">
+                <button type="button" class="button-solid" data-admin="reveal">集計を公開する</button>
+                <button type="button" class="button-ghost" data-admin="open">受付を締め切る</button>
+                <button type="button" class="button-ghost" data-admin="export">CSV をダウンロード</button>
+                <button type="button" class="button-ghost is-danger" data-admin="reset">回答をリセット</button>
+                <button type="button" class="button-ghost" data-admin="logout">ログアウト</button>
+              </div>
+              <table class="admin-table" id="admin-sessions" aria-label="各回の受付状況"></table>
+            </div>
+            <p class="admin-msg" id="admin-msg" role="status"></p>
+          </div>
+        </details>
+
+        <p class="attendance-back"><a href="./">← アンケート一覧に戻る</a></p>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div class="footer-brand">
+          <span class="brand-mark small" aria-hidden="true">KS</span>
+          <p><strong>企業診断ＡＢＣ 2026</strong><br /><span>河合勝彦 担当分（第6〜10回）</span></p>
+        </div>
+        <div class="footer-meta">
+          <a href="./">アンケート一覧</a>
+          <a href="results.html">集計結果</a>
+          <a href="../">トップページへ <span aria-hidden="true">↑</span></a>
+          <small>© 2026 Katsuhiko Kawai</small>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../assets/js/survey-data.js?v=20261018"></script>
+    <script src="../assets/js/survey.js?v=20261018"></script>
+    <script>
+      initResultsPage();
+    </script>
+  </body>
+</html>

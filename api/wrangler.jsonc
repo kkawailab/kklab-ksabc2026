@@ -1,0 +1,27 @@
+{
+  // 企業診断ＡＢＣ 2026（河合担当分）アンケート集計 API の Cloudflare Workers 設定
+  // デプロイ: npx wrangler deploy --config api/wrangler.jsonc
+  "name": "kklab-ksabc2026-survey",
+  "main": "src/index.js",
+  "compatibility_date": "2026-10-04",
+
+  // workers.dev の URL で公開する。プレビュー URL は作らない
+  "workers_dev": true,
+  "preview_urls": false,
+  "observability": { "enabled": true },
+
+  // 回答を保存する D1（SQLite）。スキーマは schema.sql
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "kklab-ksabc2026-survey",
+      "database_id": "0a9db0cf-0aef-4783-a167-7d90f1796314"
+    }
+  ],
+
+  // 送信・教員用エンドポイントの IP ごとの簡易レート制限（1分あたり）
+  "ratelimits": [
+    { "name": "POST_LIMITER", "namespace_id": "2026", "simple": { "limit": 30, "period": 60 } },
+    { "name": "AUTH_LIMITER", "namespace_id": "2027", "simple": { "limit": 20, "period": 60 } }
+  ]
+}
