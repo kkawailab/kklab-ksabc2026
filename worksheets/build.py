@@ -9,7 +9,7 @@ Word は python-docx、PDF は LuaLaTeX（jlreq、tcolorbox）で組む。
 
   # 第N回ワークシート　題名         表題（全角スペースの前が回、後ろが題名）
   ## 見出し                        節。「物語」「つづく」「結末」は物語の囲み、
-                                   「この回のねらい」は色付きの囲みになる
+                                   「この回のねらい」「この回の用語」は色付きの囲みになる
   ### 問1　題名（目安：50〜80字）    問の見出し。（目安：…）は右端の札になる
   **回答：**                       回答欄。大きさは目安の文字数から決まる
   > **書き出し**　…                書き出しやヒントの囲み
@@ -161,7 +161,7 @@ def header_parts(blocks):
 
 
 def section_kind(heading):
-    if heading == "この回のねらい":
+    if heading in ("この回のねらい", "この回の用語"):
         return "goals"
     if heading.startswith(STORY_SECTIONS):
         return "story"
