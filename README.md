@@ -15,6 +15,7 @@
 - `survey/index.html`, `survey/survey06.html` 〜 `survey10.html` — 講義アンケート（各回5問・匿名）。設問は `assets/js/survey-data.js` に一元化
 - `survey/results.html` — 集計結果ページ（回答分布・事実・出典・バイアスの解説。教員用パネルで公開／締切／CSV／リセット）
 - `assets/js/survey-data.js` — アンケートの設問データ（アンケートページと集計ページの両方が参照）、`assets/js/survey.js` — 回答送信・集計表示のスクリプト
+- `worksheets/` — 学生用ワークシート（第6〜10回。`markdown/` が原稿で、`build.py` で `word/` と `pdf/` を作る。詳しくは `worksheets/README.md`）
 - `api/` — 集計 API（Cloudflare Workers + D1）。`api/src/index.js` 本体、`api/schema.sql` スキーマ、`api/wrangler.jsonc` 設定
 - `assets/css/style.css` — 共通スタイル（トップページ・ヘッダー・フッター）
 - `assets/js/attendance.js` — 出席確認クイズのスクリプト（確認コードの計算を含む）
@@ -66,6 +67,7 @@ python3 -m http.server 8000
 
 ## 更新履歴
 
+- 2026-10-31: 学生用ワークシートを追加（`worksheets/`。第6〜10回それぞれに、最近の話題を導入にした物語仕立ての演習と文字数の目安を付け、回答は Teams に投稿。Markdown・Word・PDF の3形式）
 - 2026-10-18: 講義アンケートのページを追加（`survey/`。第6〜10回それぞれに学習内容に直結し、バイアスや誤解が見えてくる5問を匿名で回答。集計結果ページ `survey/results.html` に回答分布・事実・出典・バイアスの解説を表示、教員用パネルで公開／締切／CSV／リセット）。集計 API（Cloudflare Workers + D1、`api/`）を追加。全ページのナビとトップページのお知らせ・資料セクションにリンクを追加
 - 2026-09-10: 出席確認クイズのページを追加（`attendance/`。第6〜10回それぞれにAIの基礎知識を問う4択5問、全問正解で確認コード付きの出席カードを表示）。全ページのナビとトップページの資料セクションにリンクを追加
 - 2026-09-07: favicon を追加（SVG / ICO / PNG / Apple Touch Icon。ネイビー地にアンバーの棒グラフ）
