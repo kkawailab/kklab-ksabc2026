@@ -640,14 +640,19 @@ def tex_inline(text):
     return "".join(out)
 
 
-def build_tex(blocks):
-    title, label, name, sub, lead, body = header_parts(blocks)
+def tex_preamble():
     colors = dict(INK=INK, INK2=INK2, GRAY=GRAY, PAPER=PAPER, PAPER2=PAPER2, RULE=RULE,
                   ACCENT=ACCENT, CORAL=CORAL, COURSE=COURSE)
-    out = [TEX_PREAMBLE % colors]
-    out.append(r"\newcommand*\wslabel{" + tex_escape(label) + "}")
-    out.append(r"\hypersetup{pdftitle={" + tex_escape(title) + r"},pdfauthor={河合 勝彦},pdfsubject={" + COURSE + "}}")
-    out.append(r"\begin{document}")
+    return TEX_PREAMBLE % colors
+
+
+def tex_session(blocks, on_answer=None):
+    """1回分の本文を TeX の行の並びで返す。
+
+    on_answer(問の見出し, 目安) を渡すと、回答欄の代わりにその戻り値を置く（教員用）。
+    """
+    title, label, name, sub, lead, body = header_parts(blocks)
+    out = []
     out.append(
         r"\begin{tcolorbox}[enhanced,colback=ink,colframe=ink,arc=1.5mm,boxrule=0pt,left=4mm,right=4mm,top=2.5mm,bottom=2.5mm,"
         r"before skip=0mm,after skip=2mm,fontupper=\color{white}\sffamily]"
@@ -655,7 +660,7 @@ def build_tex(blocks):
         + r"\end{tcolorbox}")
     out.append(r"{\small\color{inktwo}" + tex_inline(lead) + r"}\par")
 
-    kind, story_env, limit = "plain", None, ""
+    kind, story_env, limit, question = "plain", None, "", ""
 
     def close_story():
         nonlocal story_env
@@ -678,8 +683,8 @@ def build_tex(blocks):
                 story_env = "storybox" if head.startswith("物語") else "closingbox"
                 out.append(r"\begin{" + story_env + "}")
         elif t == "h3":
-            head, limit = split_question(b["text"])
-            out.append(r"\question{" + tex_escape(head) + "}{" + tex_escape(limit) + "}")
+            question, limit = split_question(b["text"])
+            out.append(r"\question{" + tex_escape(question) + "}{" + tex_escape(limit) + "}")
         elif t == "p":
             text = b["text"]
             if text.startswith("※"):
@@ -712,7 +717,7 @@ def build_tex(blocks):
             out.extend(tex_inline(p) + r"\par" for p in b["paras"])
             out.append(r"\end{hintbox}")
         elif t == "answer":
-            out.append(r"\answerlines{" + str(answer_lines(limit)) + "}")
+            out.append(on_answer(question, limit) if on_answer else r"\answerlines{" + str(answer_lines(limit)) + "}")
         elif t == "table":
             rows = b["rows"]
             out.append(r"\begin{center}\small\renewcommand{\arraystretch}{1.15}")
@@ -728,26 +733,40 @@ def build_tex(blocks):
             out.append(r"\\".join(tex_escape(l) for l in b["lines"]))
             out.append(r"\end{codebox}")
     close_story()
+    return out
+
+
+def build_tex(blocks):
+    title, label, *_ = header_parts(blocks)
+    out = [tex_preamble()]
+    out.append(r"\newcommand*\wslabel{" + tex_escape(label) + "}")
+    out.append(r"\hypersetup{pdftitle={" + tex_escape(title) + r"},pdfauthor={河合 勝彦},pdfsubject={" + COURSE + "}}")
+    out.append(r"\begin{document}")
+    out.extend(tex_session(blocks))
     out.append(r"\end{document}")
     return "\n".join(out)
 
 
-def build_pdf(num, blocks):
-    tex = build_tex(blocks)
+def compile_tex(tex, job, dest, who, passes=2):
+    """tex を LuaLaTeX で組み、dest に PDF を置く。who はメッセージに出す名前。"""
     with tempfile.TemporaryDirectory() as tmp:
-        job = f"worksheet{num}"
         (Path(tmp) / f"{job}.tex").write_text(tex, encoding="utf-8")
-        for _ in range(2):
+        for _ in range(passes):
             run = subprocess.run(
                 ["lualatex", "-interaction=nonstopmode", "-halt-on-error", f"{job}.tex"],
                 cwd=tmp, capture_output=True, text=True, errors="replace")
             if run.returncode:
-                sys.exit(f"第{num}回の PDF を組めませんでした:\n" + run.stdout[-2500:])
+                sys.exit(f"{who}の PDF を組めませんでした:\n" + run.stdout[-2500:])
         log = (Path(tmp) / f"{job}.log").read_text(encoding="utf-8", errors="replace")
         missing = sorted(set(re.findall(r"Missing character: There is no (.)", log)))
         if missing:
-            print(f"  警告: 第{num}回 PDF に出ない文字 {missing}")
-        shutil.copy(Path(tmp) / f"{job}.pdf", PDF_DIR / f"{job}.pdf")
+            print(f"  警告: {who} PDF に出ない文字 {missing}")
+        shutil.copy(Path(tmp) / f"{job}.pdf", dest)
+
+
+def build_pdf(num, blocks):
+    job = f"worksheet{num}"
+    compile_tex(build_tex(blocks), job, PDF_DIR / f"{job}.pdf", f"第{num}回")
 
 
 def main():
