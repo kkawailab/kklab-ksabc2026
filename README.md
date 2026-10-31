@@ -16,6 +16,7 @@
 - `survey/results.html` — 集計結果ページ（回答分布・事実・出典・バイアスの解説。教員用パネルで公開／締切／CSV／リセット）
 - `assets/js/survey-data.js` — アンケートの設問データ（アンケートページと集計ページの両方が参照）、`assets/js/survey.js` — 回答送信・集計表示のスクリプト
 - `worksheets/` — 学生用ワークシート（第6〜10回。`markdown/` が原稿で、`build.py` で `word/` と `pdf/` を作る。詳しくは `worksheets/README.md`）
+- `videos/` — 各回の「講義の流れ」の解説音声付きスライド動画（`script/` が原稿で、`build.py` で `mp4/` と `vtt/` を作る。詳しくは `videos/README.md`）
 - `api/` — 集計 API（Cloudflare Workers + D1）。`api/src/index.js` 本体、`api/schema.sql` スキーマ、`api/wrangler.jsonc` 設定
 - `assets/css/style.css` — 共通スタイル（トップページ・ヘッダー・フッター）
 - `assets/js/attendance.js` — 出席確認クイズのスクリプト（確認コードの計算を含む）
@@ -67,6 +68,7 @@ python3 -m http.server 8000
 
 ## 更新履歴
 
+- 2026-11-01: 各回の「講義の流れ」の解説音声付きスライド動画を追加（`videos/`。第6〜10回、字幕付き、音声は AI による合成音声。講義ページからのリンクは未設定）
 - 2026-10-31: 学生用ワークシート（第6〜10回）を見直し（各回に「この回の用語」と「診断カルテ」を追加、第8回の話題の時系列などを修正、話題と問の説明を補強。Markdown・Word・PDF）
 - 2026-10-31: 学生用ワークシート（第6〜10回）の冒頭の案内を「講義のあとに取り組みます。」から「教員の指示があったら取り組みます。」に変更（Markdown・Word・PDF）
 - 2026-10-31: 講義アンケートの数値を最新の統計に更新（第7回Q1、第9回Q1・Q4、第10回Q1。第7回Q1と第9回Q1は正解の選択肢も変更）

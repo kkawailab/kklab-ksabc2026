@@ -4,3 +4,4 @@ api/.dev.vars
 # 教員用の模範解答。リポジトリは公開で、push するとサイトにも載るのでコミットしない
 worksheets/teacher/
 __pycache__/
+videos/.cache/
