@@ -85,6 +85,10 @@
 .flow-list p { margin: 0; color: var(--ink-soft); font-size: 13px; }
 .flow-list ul { margin: 10px 0 0; padding-left: 1.2em; color: var(--ink-soft); font-size: 13px; display: grid; gap: 4px; }
 .flow-list ul li::marker { color: var(--accent); }
+.flow-video { margin-top: 18px; padding: 16px 18px; background: var(--white); border-left: 3px solid var(--accent); display: grid; gap: 12px; }
+.flow-video p { margin: 0; color: var(--ink-soft); font-size: 13px; }
+.flow-video video { display: block; width: 100%; max-width: 720px; aspect-ratio: 16 / 9; background: var(--ink); }
+.flow-video-links { display: flex; flex-wrap: wrap; gap: 8px; }
 .flow-time { display: inline-block; margin-left: 10px; color: var(--ink-soft); font-size: 11px; font-weight: 600; letter-spacing: .04em; vertical-align: 2px; }
 
 .think-box { padding: 28px 30px; color: var(--white); background: var(--ink); border-top: 3px solid var(--accent); display: grid; gap: 14px; }
