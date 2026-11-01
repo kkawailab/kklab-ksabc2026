@@ -1,0 +1,156 @@
+
+\documentclass[paper=a4paper,fontsize=10pt,line_length=170mm,number_of_lines=46,baselineskip=1.6zw]{jlreq}
+\usepackage[table]{xcolor}
+\usepackage[most]{tcolorbox}
+\usepackage{enumitem}
+\usepackage{needspace}
+\usepackage{array}
+\usepackage{fancyhdr}
+\usepackage[colorlinks=true,linkcolor=linkblue,urlcolor=linkblue]{hyperref}
+\ltjsetparameter{jacharrange={-1,+2,+3,+4,-5,+6,+7,+8}}
+\definecolor{ink}{HTML}{0F1D33}
+\definecolor{inktwo}{HTML}{3D4A63}
+\definecolor{grayt}{HTML}{6B7280}
+\definecolor{paper}{HTML}{F4F2EC}
+\definecolor{papertwo}{HTML}{E8E4D9}
+\definecolor{rulec}{HTML}{C9C5B9}
+\definecolor{accent}{HTML}{FFC857}
+\definecolor{coral}{HTML}{D9593A}
+\definecolor{linkblue}{HTML}{1F4E9E}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlist{nosep,leftmargin=1.5em}
+\pagestyle{fancy}\fancyhf{}\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[L]{\sffamily\scriptsize\color{grayt}企業診断ＡＢＣ 2026（河合担当分）　\wslabel}
+\fancyfoot[R]{\sffamily\scriptsize\color{grayt}\thepage}
+\newcommand\sectionhead[2]{\par\needspace{24mm}\vspace{3mm}%
+  {\sffamily\bfseries\large #1\if\relax\detokenize{#2}\relax\else\textcolor{coral}{　#2}\fi}\par
+  \vspace{0.8mm}{\color{ink}\hrule height 0.5pt}\vspace{1.5mm}}
+\newcommand\question[2]{\par\needspace{34mm}\vspace{3mm}%
+  {\sffamily\bfseries #1}\hfill\colorbox{accent}{\sffamily\footnotesize\bfseries 目安：#2}\par\vspace{1mm}}
+\newtcolorbox{goalbox}{enhanced,colback=paper,colframe=paper,boxrule=0pt,arc=1mm,
+  left=3mm,right=3mm,top=1.5mm,bottom=1.5mm,before skip=1mm,after skip=1mm,fontupper=\small}
+\newtcolorbox{storybox}{enhanced,breakable,colback=paper,colframe=paper,boxrule=0pt,arc=0mm,
+  borderline west={1.1mm}{0pt}{accent},left=3.5mm,right=3mm,top=2mm,bottom=2mm,
+  before skip=1mm,after skip=1.5mm,parbox=false,before upper={\setlength{\parskip}{1.2mm}}}
+\newtcolorbox{closingbox}{enhanced,colback=paper,colframe=paper,boxrule=0pt,arc=0mm,
+  borderline west={1.1mm}{0pt}{accent},left=3.5mm,right=3mm,top=2mm,bottom=2mm,
+  before skip=1mm,after skip=1.5mm,parbox=false,before upper={\setlength{\parskip}{1.2mm}}}
+\newtcolorbox{hintbox}{enhanced,colback=papertwo,colframe=papertwo,boxrule=0pt,arc=1mm,
+  left=2.5mm,right=2.5mm,top=1.2mm,bottom=1.2mm,before skip=1.2mm,after skip=1.5mm,
+  parbox=false,before upper={\setlength{\parskip}{1mm}},fontupper=\footnotesize}
+\newtcolorbox{codebox}{enhanced,colback=white,colframe=ink,boxrule=0.5pt,arc=1mm,
+  left=3mm,right=3mm,top=1.5mm,bottom=1.5mm,before skip=2mm,after skip=2mm,fontupper=\sffamily\small}
+\newcommand\answerlines[1]{%
+  \begin{tcolorbox}[enhanced,colback=white,colframe=rulec,boxrule=0.5pt,arc=1mm,
+    left=2mm,right=2mm,top=1mm,bottom=1.5mm,before skip=1mm,after skip=1.5mm]
+  {\sffamily\scriptsize\color{grayt}回答（下書き）}\par
+  \foreach\n in {1,...,#1}{\nointerlineskip\noindent{\color{rulec}\vbox to 6.2mm{\vfil\hrule width\linewidth}}\par}
+  \end{tcolorbox}}
+
+
+\usepackage{array}
+\newcommand\topichead[4]{% 回の表示、トピック番号、全トピック数、題
+  {\sffamily\footnotesize\color{grayt}#1\par}\vspace{1.5mm}
+  {\sffamily\bfseries\LARGE #4}\hfill\colorbox{accent}{\sffamily\footnotesize\bfseries トピック #2 / #3}\par
+  \vspace{1.2mm}{\color{ink}\hrule height 0.6pt}\vspace{3mm}}
+\newcommand\subhead[1]{\par\vspace{2.6mm}{\sffamily\bfseries\large #1}\par\vspace{1.3mm}}
+\newtcolorbox{checkbox}{enhanced,colback=white,colframe=coral,boxrule=0.5pt,arc=1mm,
+  left=2.5mm,right=2.5mm,top=1.2mm,bottom=1.2mm,before skip=2mm,after skip=1mm,fontupper=\small}
+
+\newcommand*\wslabel{第7回講義ノート}
+\hypersetup{pdftitle={第7回講義ノート　人工知能：企業における生成AI},pdfauthor={河合 勝彦},pdfsubject={企業診断ＡＢＣ 2026（河合担当分）}}
+\begin{document}
+\topichead{第7回講義ノート｜人工知能：企業における生成AI｜2026年11月9日（月）2限}{1}{4}{AIの歴史と種類}
+人工知能（AI）は、人間の知的な活動をコンピュータで行わせる技術と、その研究分野を指します。言葉が生まれたのは1956年のダートマス会議で、以来、期待が高まるブームと、期待を裏切って研究が停滞する「冬の時代」を繰り返してきました。現在の生成AIは、その流れの最新の段階です。\par\vspace{1.2mm}
+\subhead{4つの段階}
+\begin{center}\small\renewcommand{\arraystretch}{1.15}\setlength{\tabcolsep}{1.5mm}
+\begin{tabular}{|p{24.0mm}|p{32.5mm}|p{32.5mm}|p{32.5mm}|p{32.5mm}|}\arrayrulecolor{rulec}\hline
+\rowcolor{papertwo}\sffamily\bfseries 段階 & \sffamily\bfseries 時期 & \sffamily\bfseries しくみ & \sffamily\bfseries できたこと & \sffamily\bfseries 限界\\\hline
+ルールベース & 1950〜80年代 & 人が書いた規則と記号処理で推論する & パズル、定理の証明、専門家の判断をまねるエキスパートシステム & 規則を書ききれない。例外に弱い\\\hline
+機械学習 & 1990年代〜 & データから規則を統計的に学ぶ & 迷惑メールの判定、商品の推薦 & 人が特徴を設計する必要がある\\\hline
+深層学習 & 2010年代〜 & 多層のニューラルネットワークが特徴も学ぶ & 画像認識（2012年）、音声認識、囲碁（2016年） & 大量のデータと計算が要る。判断の理由が見えにくい\\\hline
+生成AI & 2017年〜 & 学んだ分布から文章、画像、音声をつくり出す & 文章の生成、要約、翻訳、画像の生成（2022年に広く普及） & 事実の正確さを保証しない\\\hline
+\end{tabular}\end{center}\vspace{0.5mm}
+\subhead{ブームと冬の時代}
+第1次ブーム（1950〜60年代）は探索と推論の時代で、決まったルールの問題は解けても、現実の複雑な問題には歯が立ちませんでした。第2次ブーム（1980年代）はエキスパートシステムの時代で、日本でも第五世代コンピュータ計画が進められましたが、専門家の知識を規則として書き出す作業に限界がありました。第3次ブーム（2010年代）は、インターネットで集まった大量のデータと計算機の性能向上を背景に、深層学習が画像や音声の認識で人に迫る精度を出したことから始まりました。\par\vspace{1.2mm}
+\subhead{種類の見分け方}
+AIは「何をするか」で分けると見通しがよくなります。判別や予測をするAI（画像に何が写っているか、来月の売上はいくらか）と、新しいものを生成するAI（文章、画像、音声、プログラム）です。生成AIは、深層学習の技術のうえに成り立っています。企業の中では、この2種類が別々の用途で使われています。\par\vspace{1.2mm}
+\begin{checkbox}
+{\sffamily\bfseries 確認}　「生成AI」と、それ以前の「機械学習」との違いを、1文で説明できますか。\par
+\end{checkbox}
+\clearpage
+\topichead{第7回講義ノート｜人工知能：企業における生成AI｜2026年11月9日（月）2限}{2}{4}{生成AIのしくみを概観する}
+生成AIの中心にある大規模言語モデル（LLM）は、文章の続きとして「次に来やすい単語」を予測するモデルです。このしくみを知ると、何が得意で何が苦手かが見えてきます。\par\vspace{1.2mm}
+\subhead{基本の用語}
+\begin{itemize}[leftmargin=1.5em,itemsep=0.6mm,topsep=0.3mm]
+\item {\sffamily\bfseries Transformer}　2017年に提案された、文章の中のどの語に注目するか（注意機構）を学ぶ構造。現在の大規模言語モデルの土台。
+\item {\sffamily\bfseries 事前学習と微調整}　膨大な文章から言葉のパターンを学ぶのが事前学習。そのあと、指示に従う、丁寧に答えるといった振る舞いを、人のフィードバックで整えるのが微調整。
+\item {\sffamily\bfseries プロンプトとコンテキスト}　利用者が与える指示や質問がプロンプト。モデルが一度に読める範囲がコンテキストで、ここに入っていない情報は使えない。
+\end{itemize}\vspace{0.8mm}
+モデルは、学習した統計的なパターンにもとづいて文章を組み立てています。正しい答えを「検索」して返しているわけではありません。\par\vspace{1.2mm}
+\subhead{得意なことと苦手なこと}
+\begin{center}\small\renewcommand{\arraystretch}{1.15}\setlength{\tabcolsep}{1.5mm}
+\begin{tabular}{|p{24.0mm}|p{68.0mm}|p{68.0mm}|}\arrayrulecolor{rulec}\hline
+\rowcolor{papertwo}\sffamily\bfseries 得意 & \sffamily\bfseries 苦手 & \sffamily\bfseries 苦手な理由\\\hline
+文章の生成、下書き、言い換え & 事実の確認 & 事実を調べているのではなく、もっともらしい続きを作っている\\\hline
+要約、翻訳、形式の変換 & 最新の情報 & 学習した時点より新しいことを知らない\\\hline
+アイデア出し、たたき台 & 厳密な計算 & 数を記号として扱い、計算しているわけではない\\\hline
+プログラムの作成と説明 & 出典の提示 & 実在しない文献や判例を、それらしく作ってしまう\\\hline
+\end{tabular}\end{center}\vspace{0.5mm}
+もっともらしいが事実と異なる出力を、ハルシネーションといいます。第7回の「最近の話題」で見た、実在しない判例3件を載せた書籍の回収は、出典の提示が苦手なことを確かめずに使った例です。\par\vspace{1.2mm}
+\subhead{苦手を補う方法}
+\begin{itemize}[leftmargin=1.5em,itemsep=0.6mm,topsep=0.3mm]
+\item {\sffamily\bfseries RAG（検索拡張生成）}　質問に関係する文書を先に検索し、その内容をコンテキストに入れて答えさせる。社内文書や最新情報に答えられ、引用元を示せる。
+\item {\sffamily\bfseries ツールの利用}　計算や検索を、モデルではなく外部の道具に任せる。
+\item {\sffamily\bfseries 人の確認}　外に出す前に、人が事実と出典を確かめる。企業の利用ガイドラインの多くがこれを求めている。
+\end{itemize}\vspace{0.8mm}
+\begin{checkbox}
+{\sffamily\bfseries 確認}　大規模言語モデルが苦手なことを3つ挙げ、それぞれの理由を言えますか。\par
+\end{checkbox}
+\clearpage
+\topichead{第7回講義ノート｜人工知能：企業における生成AI｜2026年11月9日（月）2限}{3}{4}{企業における生成AIの活用}
+企業での生成AIの使い方は、個人が手元で試す段階から、全社で導入し、自社のデータとつなぐ段階へと広がっています。活用の類型と、効果の確かめ方を整理します。\par\vspace{1.2mm}
+\subhead{活用の類型}
+\begin{center}\small\renewcommand{\arraystretch}{1.15}\setlength{\tabcolsep}{1.5mm}
+\begin{tabular}{|p{24.0mm}|p{68.0mm}|p{68.0mm}|}\arrayrulecolor{rulec}\hline
+\rowcolor{papertwo}\sffamily\bfseries 類型 & \sffamily\bfseries AIに任せること & \sffamily\bfseries 人がすること\\\hline
+文書作成・要約・翻訳 & 議事録、メール、報告書の下書き、長文の要約 & 事実と表現の確認、最終判断\\\hline
+カスタマーサポート & 問い合わせへの一次回答、回答の下書き & 回答の確認、難しい案件の対応\\\hline
+社内知識の検索（RAG） & 規程やマニュアルから該当箇所を探して答える & 引用元との照合、文書の整備\\\hline
+ソフトウェア開発 & コードの生成、説明、テストの作成 & 設計、レビュー、動作の確認\\\hline
+マーケティング & 案の量産、文章や画像のたたき台 & 顧客と法令に照らした選択\\\hline
+\end{tabular}\end{center}\vspace{0.5mm}
+\subhead{個人利用から全社導入へ}
+個人が無料のサービスを使う段階では、入力した情報の扱いが会社の管理の外にあります。全社導入では、契約で入力データが学習に使われないことを確かめ、利用記録を残し、ガイドラインと研修を整えます。次の段階が自社データとの接続で、RAG によって自社の規程や顧客対応の履歴にもとづく回答ができるようになります。さらに、複数の手順を自律的に実行するAIエージェントに、定型の業務を任せる試みも始まっています。\par\vspace{1.2mm}
+\subhead{利用の広がりと効果}
+総務省『令和8年版 情報通信白書』（2026年）によると、企業向けの調査で、自社の何らかの業務で生成AIを利用していると答えた割合は、日本で86.4\%でした（活用方針の設問に「わからない」と答えた人を除く集計）。最も多い用途は議事録・メール作成の補助で約7割です。一方、生成AIによる業務変革に「組織的な取組はない」という回答は約3割弱で、調査した米国・ドイツ・中国より高い水準でした。個人向けの調査では、生成AIの利用経験は日本で58.8\%です。\par\vspace{1.2mm}
+効果は、企業自身の発表にもとづく例が多くあります。パナソニック コネクトは、2025年度に生成AIの活用で78.8万時間の労働時間を削減し、年間総労働時間の3.4\%に相当すると発表しました。数字を読むときは、誰がどう測ったかを確かめます。\par\vspace{1.2mm}
+\subhead{仕事の中身の変化}
+生成AIが下書きをつくると、人の仕事は「書く」から「確かめて選ぶ」へ移ります。確かめるには、その分野の知識が要ります。新人が下書きを経験せずに確認だけを担えるのか、という問いが、企業の人材育成の新しい課題になっています。\par\vspace{1.2mm}
+\begin{checkbox}
+{\sffamily\bfseries 確認}　生成AIの導入事例を1つ選び、「導入の目的」「得られた効果」「懸念点・対策」の3点で整理できますか。\par
+\end{checkbox}
+\vspace{1.5mm}{\sffamily\footnotesize\color{grayt}出典：総務省『令和8年版 情報通信白書』（2026年）／パナソニック「パナソニック コネクト、AI活用で総労働時間の3.4％削減」（2026年7月29日）\par}
+\clearpage
+\topichead{第7回講義ノート｜人工知能：企業における生成AI｜2026年11月9日（月）2限}{4}{4}{限界・リスクとガバナンス}
+生成AIのリスクは、「情報」「法」「品質」の3つの観点で整理すると見落としが減ります。それぞれに対策があり、対策をまとめて運用するのがAIガバナンスです。\par\vspace{1.2mm}
+\subhead{3つの観点}
+\begin{center}\small\renewcommand{\arraystretch}{1.15}\setlength{\tabcolsep}{1.5mm}
+\begin{tabular}{|p{24.0mm}|p{44.3mm}|p{44.3mm}|p{44.3mm}|}\arrayrulecolor{rulec}\hline
+\rowcolor{papertwo}\sffamily\bfseries 観点 & \sffamily\bfseries リスク & \sffamily\bfseries 例 & \sffamily\bfseries 対策\\\hline
+情報 & 機密情報・個人情報の漏えい、シャドーAI & 顧客名簿や未公開情報を入力する。会社が把握していないサービスを社員が使う & 入力してよい情報の区分、学習に使われない契約、利用の記録\\\hline
+法 & 著作権の侵害、規制やガイドラインへの違反 & 既存のキャラクターに似た画像を生成して使う。表示や説明の義務を怠る & 生成物の確認、権利の確認、最新の規制の把握\\\hline
+品質 & ハルシネーション、バイアス、説明責任 & 誤った案内を顧客に送る。偏った学習データが判断に影響する & 人が最終判断に関与する設計、検証の体制、記録\\\hline
+\end{tabular}\end{center}\vspace{0.5mm}
+\subhead{情報の観点}
+入力した内容は、サービスによっては事業者側に保存され、学習に使われることがあります。何を入力してよいかを決め、守られているかを確かめる必要があります。会社が把握していない個人利用（シャドーAI）は、この管理の外で起きるので、禁止するだけでなく、安全に使える環境を用意することが対策になります。\par\vspace{1.2mm}
+\subhead{法の観点}
+日本の著作権法では、情報解析のための著作物の利用は、権利者の利益を不当に害する場合を除き、原則として許諾なく行えます（第30条の4）。一方、生成物が既存の著作物に似ていて、それに依拠していれば、通常の著作権侵害になり得ます。規制とガイドラインも動いています。総務省と経済産業省の「AI事業者ガイドライン」は2024年4月に公表され、その後も改訂されています。2025年には、AIの研究開発と活用を推進する法律（AI推進法）が成立し、EUではAI規則が段階的に適用されています。\par\vspace{1.2mm}
+\subhead{品質の観点とガバナンス}
+ハルシネーションは、モデルのしくみから生じる性質で、なくすことはできません。だから、どの業務で、誰が、何を確かめてから使うかを決めます。利用ガイドラインの策定、人が最終判断に関与する設計、入出力の記録、社員への教育をまとめて運用することが、AIガバナンスです。\par\vspace{1.2mm}
+\begin{checkbox}
+{\sffamily\bfseries 確認}　企業が生成AIを導入する際のリスクを、「情報」「法」「品質」の観点で、例を1つずつ挙げて整理できますか。\par
+\end{checkbox}
+\vspace{1.5mm}{\sffamily\footnotesize\color{grayt}出典：文化庁「AIと著作権に関する考え方について」（2024年）／総務省・経済産業省「AI事業者ガイドライン」（2024年4月、第1.0版）\par}
+\end{document}

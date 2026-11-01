@@ -1,0 +1,173 @@
+
+\documentclass[paper=a4paper,fontsize=10pt,line_length=170mm,number_of_lines=46,baselineskip=1.6zw]{jlreq}
+\usepackage[table]{xcolor}
+\usepackage[most]{tcolorbox}
+\usepackage{enumitem}
+\usepackage{needspace}
+\usepackage{array}
+\usepackage{fancyhdr}
+\usepackage[colorlinks=true,linkcolor=linkblue,urlcolor=linkblue]{hyperref}
+\ltjsetparameter{jacharrange={-1,+2,+3,+4,-5,+6,+7,+8}}
+\definecolor{ink}{HTML}{0F1D33}
+\definecolor{inktwo}{HTML}{3D4A63}
+\definecolor{grayt}{HTML}{6B7280}
+\definecolor{paper}{HTML}{F4F2EC}
+\definecolor{papertwo}{HTML}{E8E4D9}
+\definecolor{rulec}{HTML}{C9C5B9}
+\definecolor{accent}{HTML}{FFC857}
+\definecolor{coral}{HTML}{D9593A}
+\definecolor{linkblue}{HTML}{1F4E9E}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlist{nosep,leftmargin=1.5em}
+\pagestyle{fancy}\fancyhf{}\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[L]{\sffamily\scriptsize\color{grayt}企業診断ＡＢＣ 2026（河合担当分）　\wslabel}
+\fancyfoot[R]{\sffamily\scriptsize\color{grayt}\thepage}
+\newcommand\sectionhead[2]{\par\needspace{24mm}\vspace{3mm}%
+  {\sffamily\bfseries\large #1\if\relax\detokenize{#2}\relax\else\textcolor{coral}{　#2}\fi}\par
+  \vspace{0.8mm}{\color{ink}\hrule height 0.5pt}\vspace{1.5mm}}
+\newcommand\question[2]{\par\needspace{34mm}\vspace{3mm}%
+  {\sffamily\bfseries #1}\hfill\colorbox{accent}{\sffamily\footnotesize\bfseries 目安：#2}\par\vspace{1mm}}
+\newtcolorbox{goalbox}{enhanced,colback=paper,colframe=paper,boxrule=0pt,arc=1mm,
+  left=3mm,right=3mm,top=1.5mm,bottom=1.5mm,before skip=1mm,after skip=1mm,fontupper=\small}
+\newtcolorbox{storybox}{enhanced,breakable,colback=paper,colframe=paper,boxrule=0pt,arc=0mm,
+  borderline west={1.1mm}{0pt}{accent},left=3.5mm,right=3mm,top=2mm,bottom=2mm,
+  before skip=1mm,after skip=1.5mm,parbox=false,before upper={\setlength{\parskip}{1.2mm}}}
+\newtcolorbox{closingbox}{enhanced,colback=paper,colframe=paper,boxrule=0pt,arc=0mm,
+  borderline west={1.1mm}{0pt}{accent},left=3.5mm,right=3mm,top=2mm,bottom=2mm,
+  before skip=1mm,after skip=1.5mm,parbox=false,before upper={\setlength{\parskip}{1.2mm}}}
+\newtcolorbox{hintbox}{enhanced,colback=papertwo,colframe=papertwo,boxrule=0pt,arc=1mm,
+  left=2.5mm,right=2.5mm,top=1.2mm,bottom=1.2mm,before skip=1.2mm,after skip=1.5mm,
+  parbox=false,before upper={\setlength{\parskip}{1mm}},fontupper=\footnotesize}
+\newtcolorbox{codebox}{enhanced,colback=white,colframe=ink,boxrule=0.5pt,arc=1mm,
+  left=3mm,right=3mm,top=1.5mm,bottom=1.5mm,before skip=2mm,after skip=2mm,fontupper=\sffamily\small}
+\newcommand\answerlines[1]{%
+  \begin{tcolorbox}[enhanced,colback=white,colframe=rulec,boxrule=0.5pt,arc=1mm,
+    left=2mm,right=2mm,top=1mm,bottom=1.5mm,before skip=1mm,after skip=1.5mm]
+  {\sffamily\scriptsize\color{grayt}回答（下書き）}\par
+  \foreach\n in {1,...,#1}{\nointerlineskip\noindent{\color{rulec}\vbox to 6.2mm{\vfil\hrule width\linewidth}}\par}
+  \end{tcolorbox}}
+
+
+\usepackage{array}
+\newcommand\topichead[4]{% 回の表示、トピック番号、全トピック数、題
+  {\sffamily\footnotesize\color{grayt}#1\par}\vspace{1.5mm}
+  {\sffamily\bfseries\LARGE #4}\hfill\colorbox{accent}{\sffamily\footnotesize\bfseries トピック #2 / #3}\par
+  \vspace{1.2mm}{\color{ink}\hrule height 0.6pt}\vspace{3mm}}
+\newcommand\subhead[1]{\par\vspace{2.6mm}{\sffamily\bfseries\large #1}\par\vspace{1.3mm}}
+\newtcolorbox{checkbox}{enhanced,colback=white,colframe=coral,boxrule=0.5pt,arc=1mm,
+  left=2.5mm,right=2.5mm,top=1.2mm,bottom=1.2mm,before skip=2mm,after skip=1mm,fontupper=\small}
+
+\newcommand*\wslabel{第10回講義ノート}
+\hypersetup{pdftitle={第10回講義ノート　あたらしい社会像：Society 5.0 と スマートシティ},pdfauthor={河合 勝彦},pdfsubject={企業診断ＡＢＣ 2026（河合担当分）}}
+\begin{document}
+\topichead{第10回講義ノート｜あたらしい社会像：Society 5.0 と スマートシティ｜2026年11月30日（月）2限}{1}{4}{Society 5.0 とは}
+Society 5.0 は、狩猟社会、農耕社会、工業社会、情報社会に続く「第5の社会」として、内閣府の第5期科学技術基本計画（2016年）で提唱された日本の社会像です。企業の情報活用を、企業の中だけでなく社会の中で考えるための枠組みとして、この回の出発点になります。\par\vspace{1.2mm}
+\subhead{定義}
+\begin{hintbox}
+{\sffamily\bfseries Society 5.0}　サイバー空間（仮想空間）とフィジカル空間（現実空間）を高度に融合させたシステムにより、経済発展と社会的課題の解決を両立する、人間中心の社会。\par
+\end{hintbox}
+\begin{center}\small\renewcommand{\arraystretch}{1.15}\setlength{\tabcolsep}{1.5mm}
+\begin{tabular}{|p{24.0mm}|p{68.0mm}|p{68.0mm}|}\arrayrulecolor{rulec}\hline
+\rowcolor{papertwo}\sffamily\bfseries 段階 & \sffamily\bfseries 社会 & \sffamily\bfseries 特徴\\\hline
+1.0 & 狩猟社会 & 自然のものを採って暮らす\\\hline
+2.0 & 農耕社会 & 土地を耕し、定住する\\\hline
+3.0 & 工業社会 & 機械と動力で大量に生産する\\\hline
+4.0 & 情報社会 & 情報をデジタルで扱い、ネットワークでやりとりする\\\hline
+5.0 & Society 5.0 & 現実の世界のデータをサイバー空間で分析し、結果を現実に戻して課題を解く\\\hline
+\end{tabular}\end{center}\vspace{0.5mm}
+\subhead{なぜ提唱されたのか}
+背景には、日本が先に直面する社会的課題があります。総務省統計局の人口推計（2025年10月1日現在）では、65歳以上は3,622万人、総人口の29.4\%で、世界で最も高い水準です。人手不足、地方の交通や医療の維持、災害、環境といった課題を、人の数や労力で解くことには限界があります。データと技術で解きながら、経済の発展も両立させる、という構想です。\par\vspace{1.2mm}
+\subhead{データが「集まる」から「つながる」へ}
+情報社会（4.0）では、データはサービスごと、組織ごとに集まり、閉じていました。交通、医療、エネルギー、行政のデータは、それぞれの中では使われても、互いにつながっていません。Society 5.0 では、分野を横断してデータがつながり、AIが分析し、その結果が人に返されます。人がデータを探しに行くのではなく、必要な情報とサービスが人に届く。「人間中心」とはその意味です。\par\vspace{1.2mm}
+\subhead{企業にとっての意味}
+社会的課題の解決が、企業にとっての市場になります。高齢者の見守り、交通の最適化、防災のデータ活用は、行政だけでは担えず、企業の技術と事業が必要です。一方で、社会のデータを扱う企業には、第3パートで見る責任が伴います。\par\vspace{1.2mm}
+\begin{checkbox}
+{\sffamily\bfseries 確認}　Society 5.0 を、サイバー空間とフィジカル空間の関係を使って説明できますか。\par
+\end{checkbox}
+\vspace{1.5mm}{\sffamily\footnotesize\color{grayt}出典：内閣府「Society 5.0」／総務省統計局「人口推計」（2025年10月1日現在）\par}
+\clearpage
+\topichead{第10回講義ノート｜あたらしい社会像：Society 5.0 と スマートシティ｜2026年11月30日（月）2限}{2}{4}{支える技術：IoT・CPS・デジタルツイン}
+Society 5.0 を支えるのは、現実の世界からデータを集め、サイバー空間で分析し、結果を現実に戻す技術の組み合わせです。それぞれの役割を押さえます。\par\vspace{1.2mm}
+\subhead{技術の役割}
+\begin{center}\small\renewcommand{\arraystretch}{1.15}\setlength{\tabcolsep}{1.5mm}
+\begin{tabular}{|p{24.0mm}|p{68.0mm}|p{68.0mm}|}\arrayrulecolor{rulec}\hline
+\rowcolor{papertwo}\sffamily\bfseries 技術 & \sffamily\bfseries 役割 & \sffamily\bfseries 例\\\hline
+IoT & センサーなどのモノをネットワークにつなぎ、データを集めたり、動かしたりする & 車両のGPS、車内カメラ、河川の水位計、工場の設備の振動センサー\\\hline
+CPS（サイバー・フィジカル・システム） & 集めたデータをサイバー空間で分析し、結果を現実にフィードバックする循環 & 混雑を知らせる、信号を制御する、仕込みの量を決める\\\hline
+デジタルツイン & 現実の写しをサイバー空間につくり、試行や予測を行う & 工場の生産ラインの試行、都市の3Dモデル、橋の劣化の予測\\\hline
+AI & データから予測し、判別し、生成する & 需要予測、異常の検知\\\hline
+\end{tabular}\end{center}\vspace{0.5mm}
+\subhead{サイバー・フィジカル・システムの循環}
+\begin{enumerate}[leftmargin=1.5em,itemsep=0.6mm,topsep=0.3mm]
+\item {\sffamily\bfseries 集める}　センサーとIoTで、現実の世界のデータを集める。
+\item {\sffamily\bfseries 分析する}　サイバー空間で分析し、シミュレーションする。
+\item {\sffamily\bfseries 戻す}　結果を現実の世界に戻し、人の行動や機械の動きを変える。
+\end{enumerate}\vspace{0.8mm}
+戻した結果は、次のデータとして集められます。この循環が回り続けることが、CPSの要です。名古屋市で2026年2月に運行が始まった SRT は、GPSで走行位置を、車内カメラで乗車人数をつかみ、停留所の案内板やWebサイトで運行状況や混雑状況を知らせています。集める、処理する、戻す、という流れの身近な例です。\par\vspace{1.2mm}
+\subhead{デジタルツイン}
+現実の写しをつくる利点は、現実では試せないことを試せることです。製造では、生産ラインの変更を先に模型で試し、設備の振動や温度から故障を予測します（予知保全）。都市では、建物や道路の3Dモデルに人の流れや浸水の予測を重ね、まちづくりや防災の検討に使います。インフラでは、橋やトンネルの劣化をデータで追い、点検と補修の順番を決めます。\par\vspace{1.2mm}
+\subhead{技術の課題}
+\begin{itemize}[leftmargin=1.5em,itemsep=0.6mm,topsep=0.3mm]
+\item データの形式が組織ごとに違うと、つなげない。標準化が要る。
+\item センサーの設置と維持、通信、電力に費用がかかる。誰が負担するか。
+\item つながるほど、攻撃の入口も増える。セキュリティが前提になる。
+\item 分析の結果を現実に戻すとき、最後に判断するのは人か機械か。
+\end{itemize}\vspace{0.8mm}
+\begin{checkbox}
+{\sffamily\bfseries 確認}　スマートシティの取り組み領域を3つ挙げ、それぞれで必要なデータを言えますか。\par
+\end{checkbox}
+\vspace{1.5mm}{\sffamily\footnotesize\color{grayt}出典：マイナビニュース「名古屋で新たな路面公共交通システム『SRT』が始動」（2026年4月7日）\par}
+\clearpage
+\topichead{第10回講義ノート｜あたらしい社会像：Society 5.0 と スマートシティ｜2026年11月30日（月）2限}{3}{4}{スマートシティ}
+Society 5.0 を都市や地域のレベルで実装する取り組みが、スマートシティです。内閣府は、ICT等の新技術を活用しつつ、マネジメント（計画、整備、管理・運営等）の高度化により、都市や地域の抱える諸課題の解決を行い、また新たな価値を創出し続ける、持続可能な都市や地域と定義し、Society 5.0 の先行的な実現の場と位置づけています。\par\vspace{1.2mm}
+\subhead{取り組み領域}
+\begin{center}\small\renewcommand{\arraystretch}{1.15}\setlength{\tabcolsep}{1.5mm}
+\begin{tabular}{|p{24.0mm}|p{68.0mm}|p{68.0mm}|}\arrayrulecolor{rulec}\hline
+\rowcolor{papertwo}\sffamily\bfseries 領域 & \sffamily\bfseries 取り組み & \sffamily\bfseries 必要なデータ\\\hline
+交通 & MaaS（移動手段の検索・予約・決済を1つにまとめる）、需要に応じて走る交通 & 車両の位置、乗車人数、予約\\\hline
+エネルギー & スマートグリッド（需要と供給をデータで調整する電力網） & 電力の使用量、発電量、気象\\\hline
+防災・減災 & 河川や斜面のセンサー、避難情報の配信 & 水位、雨量、人の位置\\\hline
+行政サービス & 手続きのオンライン化、窓口の待ち時間の案内 & 申請、来庁、問い合わせ\\\hline
+健康・見守り & 高齢者の見守り、健康データの活用 & 歩数、通院、電気や水道の利用\\\hline
+\end{tabular}\end{center}\vspace{0.5mm}
+\subhead{データ連携基盤}
+領域ごとに作られたシステムは、そのままではつながりません。分野を横断してデータをつなぐ共通の基盤（都市OS、データ連携基盤）を置き、形式をそろえ、必要な相手が必要なデータを使えるようにします。交通の混雑と商店街の人の流れ、防災の避難所と要支援者の情報がつながって、初めて都市全体の課題が解けます。\par\vspace{1.2mm}
+\subhead{国内外の取り組み}
+トヨタ自動車が静岡県裾野市につくる実証都市「ウーブン・シティ」は、2026年10月から一般の人の訪問を受け入れ、試作段階の乗り物や独自の決済サービスを試せるようにしました。一方、カナダでは、Sidewalk Labs による Sidewalk Toronto（2017年発表）が、センサーによるデータ収集とそのガバナンスへの住民や専門家の批判を受けて、2020年5月に撤退を表明しました。技術の先進性だけでは、スマートシティは実現しません。\par\vspace{1.2mm}
+\subhead{課題}
+\begin{itemize}[leftmargin=1.5em,itemsep=0.6mm,topsep=0.3mm]
+\item {\sffamily\bfseries プライバシーと監視}　人数を数えるのか、顔まで撮るのか。記録はいつまで残るのか。便利さの裏で、見張られていると感じる住民がいる。
+\item {\sffamily\bfseries データの所有と利活用のルール}　集めたデータは誰のものか。企業が使ってよい範囲はどこまでか。
+\item {\sffamily\bfseries 住民の合意形成}　説明し、意見を聞き、納得を得る手順を省くと、Sidewalk Toronto のように止まる。
+\item {\sffamily\bfseries 事業の持続性}　補助金で始めた仕組みを、誰の費用で続けるのか。
+\end{itemize}\vspace{0.8mm}
+データ利用に慎重だと答える人も、便利なアプリには日常的に位置情報を渡しています（プライバシー・パラドックス）。態度と行動のずれを前提に、ルールを設計する必要があります。\par\vspace{1.2mm}
+\begin{checkbox}
+{\sffamily\bfseries 確認}　スマートシティの課題を、プライバシー、ガバナンス、合意形成、持続性の4つで説明できますか。\par
+\end{checkbox}
+\vspace{1.5mm}{\sffamily\footnotesize\color{grayt}出典：内閣府「スマートシティ」／日刊自動車新聞「トヨタ、ウーブンシティの一般訪問を受付開始」（2026年9月28日）\par}
+\clearpage
+\topichead{第10回講義ノート｜あたらしい社会像：Society 5.0 と スマートシティ｜2026年11月30日（月）2限}{4}{4}{企業の役割と、河合担当分のまとめ}
+社会の課題をデータと技術で解く構想の中で、企業はどんな役割を担うのでしょうか。最後に、企業の役割を整理し、第6回から第10回までの流れを「企業を診る」視点でつなぎ直します。\par\vspace{1.2mm}
+\subhead{官民連携における企業の役割}
+行政は制度と公共性を、企業は技術、運営、事業の継続性を担います。企業にとっては、社会課題の解決を市場として捉える視点（社会的価値と経済的価値の両立）が出発点です。そのために、企業間のデータ連携と、企業と行政のデータ連携が必要になります。データを預かる企業は、第7回の情報と法のリスク、第10回のプライバシーと合意形成の課題を、事業の前提として引き受けます。\par\vspace{1.2mm}
+\subhead{5回のつながり}
+\begin{center}\small\renewcommand{\arraystretch}{1.15}\setlength{\tabcolsep}{1.5mm}
+\begin{tabular}{|p{24.0mm}|p{44.3mm}|p{44.3mm}|p{44.3mm}|}\arrayrulecolor{rulec}\hline
+\rowcolor{papertwo}\sffamily\bfseries 回 & \sffamily\bfseries 視点 & \sffamily\bfseries 企業を診る問い & \sffamily\bfseries 主なキーワード\\\hline
+第6回 & 情報と発信 & 誰に、何を、何のために発信し、何が語られているか & データ・情報・知識、情報の非対称性、UGC、ポリシー\\\hline
+第7回 & 技術 & 何をAIに任せ、人は何を確かめているか & 大規模言語モデル、ハルシネーション、情報・法・品質\\\hline
+第8回 & 構造 & どのネットワークのどこにいて、誰が誰に課金しているか & ネットワーク効果、両面市場、弱い紐帯、ハブ\\\hline
+第9回 & 戦略 & 何を置き換え、何を生み出し、どの段階にあるか & Xテック、デジタイゼーション／デジタライゼーション／DX\\\hline
+第10回 & 社会 & 社会のデータを誰からどう集め、どう守り、誰のためになるか & Society 5.0、CPS、スマートシティ、合意形成\\\hline
+\end{tabular}\end{center}\vspace{0.5mm}
+5つの視点は別々のものではありません。企業が発信する情報（第6回）はAIでつくられ（第7回）、ネットワークの構造の中で広がり（第8回）、企業の戦略を変え（第9回）、その企業が社会のデータを扱う（第10回）。ある企業を診るときは、5つの問いを順にあてはめ、最後に「それはお客さんのためになるのか」と問います。\par\vspace{1.2mm}
+\subhead{小テストに向けて}
+小テストは、第6回から第10回の内容が範囲です。各回の講義サイトにある「復習のポイント」と、この講義ノートの各ページの「確認」に答えられるようにしておいてください。用語は、自分の言葉で説明できることが目標です。\par\vspace{1.2mm}
+\subhead{最後の問い}
+和菓子店の店主の口ぐせ「で、それはお客さんのためになるのかい？」は、企業の情報活用を評価する、いちばん短いチェックリストです。データと人の目で確かめながら進める。5回を通して伝えたかったのは、この一点です。\par\vspace{1.2mm}
+\begin{checkbox}
+{\sffamily\bfseries 確認}　河合担当5回のテーマを、「企業を診る」観点で1本の線につなげて説明できますか。\par
+\end{checkbox}
+\end{document}

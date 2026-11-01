@@ -1,0 +1,174 @@
+
+\documentclass[paper=a4paper,fontsize=10pt,line_length=170mm,number_of_lines=46,baselineskip=1.6zw]{jlreq}
+\usepackage[table]{xcolor}
+\usepackage[most]{tcolorbox}
+\usepackage{enumitem}
+\usepackage{needspace}
+\usepackage{array}
+\usepackage{fancyhdr}
+\usepackage[colorlinks=true,linkcolor=linkblue,urlcolor=linkblue]{hyperref}
+\ltjsetparameter{jacharrange={-1,+2,+3,+4,-5,+6,+7,+8}}
+\definecolor{ink}{HTML}{0F1D33}
+\definecolor{inktwo}{HTML}{3D4A63}
+\definecolor{grayt}{HTML}{6B7280}
+\definecolor{paper}{HTML}{F4F2EC}
+\definecolor{papertwo}{HTML}{E8E4D9}
+\definecolor{rulec}{HTML}{C9C5B9}
+\definecolor{accent}{HTML}{FFC857}
+\definecolor{coral}{HTML}{D9593A}
+\definecolor{linkblue}{HTML}{1F4E9E}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlist{nosep,leftmargin=1.5em}
+\pagestyle{fancy}\fancyhf{}\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[L]{\sffamily\scriptsize\color{grayt}企業診断ＡＢＣ 2026（河合担当分）　\wslabel}
+\fancyfoot[R]{\sffamily\scriptsize\color{grayt}\thepage}
+\newcommand\sectionhead[2]{\par\needspace{24mm}\vspace{3mm}%
+  {\sffamily\bfseries\large #1\if\relax\detokenize{#2}\relax\else\textcolor{coral}{　#2}\fi}\par
+  \vspace{0.8mm}{\color{ink}\hrule height 0.5pt}\vspace{1.5mm}}
+\newcommand\question[2]{\par\needspace{34mm}\vspace{3mm}%
+  {\sffamily\bfseries #1}\hfill\colorbox{accent}{\sffamily\footnotesize\bfseries 目安：#2}\par\vspace{1mm}}
+\newtcolorbox{goalbox}{enhanced,colback=paper,colframe=paper,boxrule=0pt,arc=1mm,
+  left=3mm,right=3mm,top=1.5mm,bottom=1.5mm,before skip=1mm,after skip=1mm,fontupper=\small}
+\newtcolorbox{storybox}{enhanced,breakable,colback=paper,colframe=paper,boxrule=0pt,arc=0mm,
+  borderline west={1.1mm}{0pt}{accent},left=3.5mm,right=3mm,top=2mm,bottom=2mm,
+  before skip=1mm,after skip=1.5mm,parbox=false,before upper={\setlength{\parskip}{1.2mm}}}
+\newtcolorbox{closingbox}{enhanced,colback=paper,colframe=paper,boxrule=0pt,arc=0mm,
+  borderline west={1.1mm}{0pt}{accent},left=3.5mm,right=3mm,top=2mm,bottom=2mm,
+  before skip=1mm,after skip=1.5mm,parbox=false,before upper={\setlength{\parskip}{1.2mm}}}
+\newtcolorbox{hintbox}{enhanced,colback=papertwo,colframe=papertwo,boxrule=0pt,arc=1mm,
+  left=2.5mm,right=2.5mm,top=1.2mm,bottom=1.2mm,before skip=1.2mm,after skip=1.5mm,
+  parbox=false,before upper={\setlength{\parskip}{1mm}},fontupper=\footnotesize}
+\newtcolorbox{codebox}{enhanced,colback=white,colframe=ink,boxrule=0.5pt,arc=1mm,
+  left=3mm,right=3mm,top=1.5mm,bottom=1.5mm,before skip=2mm,after skip=2mm,fontupper=\sffamily\small}
+\newcommand\answerlines[1]{%
+  \begin{tcolorbox}[enhanced,colback=white,colframe=rulec,boxrule=0.5pt,arc=1mm,
+    left=2mm,right=2mm,top=1mm,bottom=1.5mm,before skip=1mm,after skip=1.5mm]
+  {\sffamily\scriptsize\color{grayt}回答（下書き）}\par
+  \foreach\n in {1,...,#1}{\nointerlineskip\noindent{\color{rulec}\vbox to 6.2mm{\vfil\hrule width\linewidth}}\par}
+  \end{tcolorbox}}
+
+
+\usepackage{array}
+\newcommand\topichead[4]{% 回の表示、トピック番号、全トピック数、題
+  {\sffamily\footnotesize\color{grayt}#1\par}\vspace{1.5mm}
+  {\sffamily\bfseries\LARGE #4}\hfill\colorbox{accent}{\sffamily\footnotesize\bfseries トピック #2 / #3}\par
+  \vspace{1.2mm}{\color{ink}\hrule height 0.6pt}\vspace{3mm}}
+\newcommand\subhead[1]{\par\vspace{2.6mm}{\sffamily\bfseries\large #1}\par\vspace{1.3mm}}
+\newtcolorbox{checkbox}{enhanced,colback=white,colframe=coral,boxrule=0.5pt,arc=1mm,
+  left=2.5mm,right=2.5mm,top=1.2mm,bottom=1.2mm,before skip=2mm,after skip=1mm,fontupper=\small}
+
+\newcommand*\wslabel{第9回講義ノート}
+\hypersetup{pdftitle={第9回講義ノート　XテックとDX：企業のデジタル戦略},pdfauthor={河合 勝彦},pdfsubject={企業診断ＡＢＣ 2026（河合担当分）}}
+\begin{document}
+\topichead{第9回講義ノート｜XテックとDX：企業のデジタル戦略｜2026年11月23日（月・祝）2限（祝日授業日）}{1}{4}{Xテックの広がり}
+Xテックは、金融（FinTech）、教育（EdTech）のように、ある産業（X）とテクノロジーを組み合わせた言葉です。既存の産業の仕組みを、デジタル技術でつくり変える動きを指します。共通しているのは、その産業にあった「不便」が、スマートフォン、クラウド、データ、API、AIの組み合わせで解消されることです。\par\vspace{1.2mm}
+\subhead{代表的な領域}
+\begin{center}\small\renewcommand{\arraystretch}{1.15}\setlength{\tabcolsep}{1.5mm}
+\begin{tabular}{|p{24.0mm}|p{68.0mm}|p{68.0mm}|}\arrayrulecolor{rulec}\hline
+\rowcolor{papertwo}\sffamily\bfseries 領域 & \sffamily\bfseries 置き換えたもの（従来の仕組み） & \sffamily\bfseries 新しく生まれたもの\\\hline
+FinTech & 窓口、現金、紙の伝票 & スマートフォンでの決済・送金、データにもとづく融資、少額からの資産運用\\\hline
+EdTech & 教室と時間割、紙の教材 & 映像授業の受け放題、学習履歴にもとづく個別の学習\\\hline
+HealthTech & 通院、紙のカルテ & オンライン診療、ウェアラブル機器による日常の計測\\\hline
+AgriTech & 経験と勘、人手 & センサーとデータによる栽培管理、機械の自動化\\\hline
+RetailTech & レジ、棚卸し、チラシ & 無人決済、需要予測、アプリでの個別の案内\\\hline
+HRTech・LegalTech & 紙の履歴書、書面の契約 & 採用管理、電子契約、文書の検索\\\hline
+\end{tabular}\end{center}\vspace{0.5mm}
+\subhead{共通する要素}
+\begin{itemize}[leftmargin=1.5em,itemsep=0.6mm,topsep=0.3mm]
+\item {\sffamily\bfseries スマートフォン}　利用者の手元にある端末が、窓口と支払い手段と計測器を兼ねる。
+\item {\sffamily\bfseries クラウド}　自前の設備なしに、必要な分だけ計算と保存を使える。小さな企業も大企業と同じ基盤を使える。
+\item {\sffamily\bfseries データ}　利用の記録が自動的にたまり、次のサービスの材料になる。
+\item {\sffamily\bfseries API}　サービスどうしをつなぐ窓口。決済、地図、本人確認を自分で作らずに組み込める。
+\item {\sffamily\bfseries AI}　予測、判別、生成で、人手の作業を置き換える。
+\end{itemize}\vspace{0.8mm}
+\subhead{FinTech に見る「数字の読み方」}
+経済産業省の算出では、2025年のキャッシュレス決済比率は58.0\%（決済額162.7兆円）で、内訳はクレジットカードが82.7\%、コード決済が10.2\%でした。ただし58.0\%は、分母から持ち家の帰属家賃を除いた新しい「国内指標」の値で、従来の「国際比較指標」では46.3\%（2024年は42.8\%）です。政府の目標（2030年までに65\%、将来的に80\%）は国内指標で示されています。Xテックの広がりを数字で見るときは、何を分母にした指標かを確かめます。\par\vspace{1.2mm}
+\subhead{既存の企業も Xテックの担い手}
+Xテックは新興企業だけのものではありません。銀行のアプリ、小売のポイントアプリ、農機メーカーのデータサービスのように、既存の企業が自らの仕組みをつくり変える例が増えています。第2パートで、その変化を段階に分けて見ます。\par\vspace{1.2mm}
+\begin{checkbox}
+{\sffamily\bfseries 確認}　関心のある業界の Xテック事例を1つ選び、「置き換えたもの」と「新しく生まれたもの」を言えますか。\par
+\end{checkbox}
+\vspace{1.5mm}{\sffamily\footnotesize\color{grayt}出典：経済産業省「2025年のキャッシュレス決済比率を算出しました」（2026年3月31日）\par}
+\clearpage
+\topichead{第9回講義ノート｜XテックとDX：企業のデジタル戦略｜2026年11月23日（月・祝）2限（祝日授業日）}{2}{4}{DXとは何か}
+DX（デジタルトランスフォーメーション）は、デジタル技術によってビジネスモデルや組織を変革し、競争上の優位性を確立することです。言葉の由来は、デジタル技術が人々の生活のあらゆる面に引き起こす変化を指した Stolterman と Fors（2004）の論文にさかのぼります。日本では、経済産業省の定義が広く使われています。\par\vspace{1.2mm}
+\begin{hintbox}
+{\sffamily\bfseries 経済産業省「DX推進ガイドライン」（2018年）の定義}　企業がビジネス環境の激しい変化に対応し、データとデジタル技術を活用して、顧客や社会のニーズを基に、製品やサービス、ビジネスモデルを変革するとともに、業務そのものや、組織、プロセス、企業文化・風土を変革し、競争上の優位性を確立すること。\par
+\end{hintbox}
+\subhead{3つの段階}
+\begin{center}\small\renewcommand{\arraystretch}{1.15}\setlength{\tabcolsep}{1.5mm}
+\begin{tabular}{|p{24.0mm}|p{68.0mm}|p{68.0mm}|}\arrayrulecolor{rulec}\hline
+\rowcolor{papertwo}\sffamily\bfseries 段階 & \sffamily\bfseries 何を変えるか & \sffamily\bfseries 和菓子店の例\\\hline
+デジタイゼーション & 紙や物をデータにする & 紙の注文帳をスキャンして、表計算のデータにする\\\hline
+デジタライゼーション & 業務のプロセスをデジタル化し、つなぐ & 店とネットの注文を1つの画面で受け、在庫の確認から発送の手配までつなげる\\\hline
+DX & ビジネスモデルや組織そのものを変える & 季節の和菓子の定期便を始め、購入データから次の新商品を決める\\\hline
+\end{tabular}\end{center}\vspace{0.5mm}
+3つは積み重なる関係にあります。データがなければプロセスはつながらず、プロセスがつながらなければ、新しいビジネスモデルを動かせません。ただし、上の段階に進まなければ、下の段階は効率化にとどまります。\par\vspace{1.2mm}
+\subhead{従来の「IT化」との違い}
+\begin{center}\small\renewcommand{\arraystretch}{1.15}\setlength{\tabcolsep}{1.5mm}
+\begin{tabular}{|p{24.0mm}|p{68.0mm}|p{68.0mm}|}\arrayrulecolor{rulec}\hline
+\rowcolor{papertwo}\sffamily\bfseries  & \sffamily\bfseries IT化 & \sffamily\bfseries DX\\\hline
+目的 & 今の業務を速く、安くする & 顧客や社会のニーズをもとに、価値のつくり方を変える\\\hline
+主語 & 情報システム部門 & 経営者と事業部門\\\hline
+評価 & 費用の削減 & 顧客体験、新しい収益、競争上の優位\\\hline
+\end{tabular}\end{center}\vspace{0.5mm}
+IT化が悪いのではありません。IT化だけで「DXをした」と考えることが問題です。総務省の調査では、クラウドサービスを一部でも利用している企業は83.5\%（令和7年通信利用動向調査）で、基盤となる技術の導入は進んでいます。日本企業の課題は、導入そのものより、業務やビジネスモデルの変革にあります。\par\vspace{1.2mm}
+\begin{checkbox}
+{\sffamily\bfseries 確認}　「IT化」と「DX」の違いを、3つの段階を使って説明できますか。\par
+\end{checkbox}
+\vspace{1.5mm}{\sffamily\footnotesize\color{grayt}出典：総務省「令和7年通信利用動向調査」／Stolterman, E., \& Fors, A. C. (2004). Information Technology and the Good Life\par}
+\clearpage
+\topichead{第9回講義ノート｜XテックとDX：企業のデジタル戦略｜2026年11月23日（月・祝）2限（祝日授業日）}{3}{4}{日本企業のDXと「2025年の崖」}
+経済産業省は2018年の「DXレポート」で、日本企業のDXを妨げる最大の要因として、古く複雑になった既存の情報システム（レガシーシステム）の問題を指摘しました。このパートでは、何が問題で、政策はどう対応し、DXが進む企業と進まない企業を分けるものは何かを考えます。\par\vspace{1.2mm}
+\subhead{DXレポートが指摘した問題}
+\begin{itemize}[leftmargin=1.5em,itemsep=0.6mm,topsep=0.3mm]
+\item IT関連費用の約8割が、現行のビジネスの維持と運営（ラン・ザ・ビジネス）に使われ、新しい価値をつくる投資に回っていない。
+\item 既存のシステムは、事業部門ごとに作られ、長年の改修で複雑になり、中身を知る人が減って、ブラックボックス化している。
+\item このまま放置すると、2025年以降に年間最大12兆円の経済損失が生じうる。これが「2025年の崖」。レポートは、2025年には21年以上稼働しているシステムが全体の6割を占めると試算した。
+\item IT人材が、企業の情報システム部門ではなくITベンダー側に偏っている（人材の偏在）。発注する企業の側に、自社のシステムを理解し、設計できる人が少ない。
+\end{itemize}\vspace{0.8mm}
+\subhead{なぜ「崖」になるのか}
+中身がわかる人が退職すれば、システムを変えることも、止めることもできなくなります。データが部門ごとに閉じていれば、全社で活用できません。保守費用は増え、セキュリティの弱点も残ります。ワークシートの、店主にしか読めない帳簿は、小さな「崖」の例です。問題はシステムの古さそのものより、属人化とブラックボックス化にあります。\par\vspace{1.2mm}
+\subhead{政策の枠組み}
+\begin{center}\small\renewcommand{\arraystretch}{1.15}\setlength{\tabcolsep}{1.5mm}
+\begin{tabular}{|p{38.0mm}|p{125.0mm}|}\arrayrulecolor{rulec}\hline
+\rowcolor{papertwo}\sffamily\bfseries 枠組み & \sffamily\bfseries 内容\\\hline
+DX推進指標（2019年） & 企業が自社のDXの成熟度を自己診断するための指標\\\hline
+デジタルガバナンス・コード（2020年策定、2024年9月に3.0へ改訂） & 経営者に求められるDXの取り組みを整理した指針\\\hline
+DX認定制度 & コードにもとづく取り組みを国が認定する制度。認定が投資家や取引先への説明になる\\\hline
+\end{tabular}\end{center}\vspace{0.5mm}
+\subhead{進む企業と進まない企業を分けるもの}
+IPA『DX白書』などの調査では、DXの課題として「人材不足」「経営層のビジョン不明確」「既存業務の見直しへの抵抗」といった人と組織の問題が上位を占め、技術そのものが最大の障壁とされることは少ないです。進む企業では、経営者が目的を言葉にし、小さく始めて成果を見せ、自社で設計できる人材を育てています（内製化）。\par\vspace{1.2mm}
+\begin{checkbox}
+{\sffamily\bfseries 確認}　「2025年の崖」とは何を指し、なぜ問題なのか、説明できますか。\par
+\end{checkbox}
+\vspace{1.5mm}{\sffamily\footnotesize\color{grayt}出典：経済産業省「DXレポート 〜ITシステム『2025年の崖』の克服とDXの本格的な展開〜」（2018年）／経済産業省「デジタルガバナンス・コード3.0」（2024年9月）／IPA『DX白書』\par}
+\clearpage
+\topichead{第9回講義ノート｜XテックとDX：企業のデジタル戦略｜2026年11月23日（月・祝）2限（祝日授業日）}{4}{4}{企業のデジタル戦略を評価する}
+ある企業のデジタル戦略を「診る」には、観点を決めて見ることが必要です。このパートでは4つの観点を立て、それを妨げる組織の壁と、乗り越える進め方を見て、チェックリストにまとめます。\par\vspace{1.2mm}
+\subhead{4つの観点}
+\begin{center}\small\renewcommand{\arraystretch}{1.15}\setlength{\tabcolsep}{1.5mm}
+\begin{tabular}{|p{24.0mm}|p{68.0mm}|p{68.0mm}|}\arrayrulecolor{rulec}\hline
+\rowcolor{papertwo}\sffamily\bfseries 観点 & \sffamily\bfseries 問い & \sffamily\bfseries 見るところ\\\hline
+顧客体験 & 顧客にとって何が便利になったか & 待ち時間、手続きの数、選べる範囲、個別の対応\\\hline
+業務プロセス & 仕事の流れはつながったか & 紙と再入力の有無、部門をまたぐ受け渡し、処理の時間\\\hline
+ビジネスモデル & 稼ぎ方は変わったか & モノ売りからサブスクリプションやサービス化へ。新しい顧客、新しい収益\\\hline
+データにもとづく意思決定 & 勘ではなくデータで決めているか & 何を測っているか、誰がいつ見るか、決定に反映されているか\\\hline
+\end{tabular}\end{center}\vspace{0.5mm}
+\subhead{ビジネスモデルの変化}
+売り切りのモノ売りから、継続して使ってもらい料金を得るサブスクリプションやサービス化への移行は、DXの典型です。ソフトウェアの月額利用、自動車や家電の定額利用、和菓子店の定期便はその例です。企業は売った時点ではなく、使われている間ずっと顧客と関係を持ち、利用データを次の改善に使えます。一方で、使われなければ解約されるので、価値を出し続ける必要があります。\par\vspace{1.2mm}
+\subhead{組織・人材・企業文化の壁}
+技術より、人と組織が壁になります。部門ごとの縦割り、失敗を避ける文化、外部のベンダーに任せきりで自社に知見が残らない構造です。乗り越える進め方として、自社でシステムを設計し作る力を持つ内製化と、計画をすべて決めてから作るのではなく、小さく作って試し、直しながら進めるアジャイルな方法が広がっています。\par\vspace{1.2mm}
+\subhead{企業のデジタル戦略を診るチェックリスト}
+\begin{enumerate}[leftmargin=1.5em,itemsep=0.6mm,topsep=0.3mm]
+\item その企業は、何をデジタルに置き換え、何を新しく生み出したか。
+\item それは、デジタイゼーション、デジタライゼーション、DXのどの段階か。理由は何か。
+\item 4つの観点のうち、何が変わり、何が変わっていないか。
+\item 変革を担っているのは誰か（経営者、事業部門、情報システム部門、外部）。
+\item データは誰が持ち、意思決定にどう使われているか。
+\end{enumerate}\vspace{0.8mm}
+\begin{checkbox}
+{\sffamily\bfseries 確認}　ある企業のデジタル戦略を評価するとき、どの観点を見るか、3つ挙げられますか。\par
+\end{checkbox}
+\end{document}

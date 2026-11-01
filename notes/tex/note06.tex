@@ -1,0 +1,164 @@
+
+\documentclass[paper=a4paper,fontsize=10pt,line_length=170mm,number_of_lines=46,baselineskip=1.6zw]{jlreq}
+\usepackage[table]{xcolor}
+\usepackage[most]{tcolorbox}
+\usepackage{enumitem}
+\usepackage{needspace}
+\usepackage{array}
+\usepackage{fancyhdr}
+\usepackage[colorlinks=true,linkcolor=linkblue,urlcolor=linkblue]{hyperref}
+\ltjsetparameter{jacharrange={-1,+2,+3,+4,-5,+6,+7,+8}}
+\definecolor{ink}{HTML}{0F1D33}
+\definecolor{inktwo}{HTML}{3D4A63}
+\definecolor{grayt}{HTML}{6B7280}
+\definecolor{paper}{HTML}{F4F2EC}
+\definecolor{papertwo}{HTML}{E8E4D9}
+\definecolor{rulec}{HTML}{C9C5B9}
+\definecolor{accent}{HTML}{FFC857}
+\definecolor{coral}{HTML}{D9593A}
+\definecolor{linkblue}{HTML}{1F4E9E}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlist{nosep,leftmargin=1.5em}
+\pagestyle{fancy}\fancyhf{}\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[L]{\sffamily\scriptsize\color{grayt}企業診断ＡＢＣ 2026（河合担当分）　\wslabel}
+\fancyfoot[R]{\sffamily\scriptsize\color{grayt}\thepage}
+\newcommand\sectionhead[2]{\par\needspace{24mm}\vspace{3mm}%
+  {\sffamily\bfseries\large #1\if\relax\detokenize{#2}\relax\else\textcolor{coral}{　#2}\fi}\par
+  \vspace{0.8mm}{\color{ink}\hrule height 0.5pt}\vspace{1.5mm}}
+\newcommand\question[2]{\par\needspace{34mm}\vspace{3mm}%
+  {\sffamily\bfseries #1}\hfill\colorbox{accent}{\sffamily\footnotesize\bfseries 目安：#2}\par\vspace{1mm}}
+\newtcolorbox{goalbox}{enhanced,colback=paper,colframe=paper,boxrule=0pt,arc=1mm,
+  left=3mm,right=3mm,top=1.5mm,bottom=1.5mm,before skip=1mm,after skip=1mm,fontupper=\small}
+\newtcolorbox{storybox}{enhanced,breakable,colback=paper,colframe=paper,boxrule=0pt,arc=0mm,
+  borderline west={1.1mm}{0pt}{accent},left=3.5mm,right=3mm,top=2mm,bottom=2mm,
+  before skip=1mm,after skip=1.5mm,parbox=false,before upper={\setlength{\parskip}{1.2mm}}}
+\newtcolorbox{closingbox}{enhanced,colback=paper,colframe=paper,boxrule=0pt,arc=0mm,
+  borderline west={1.1mm}{0pt}{accent},left=3.5mm,right=3mm,top=2mm,bottom=2mm,
+  before skip=1mm,after skip=1.5mm,parbox=false,before upper={\setlength{\parskip}{1.2mm}}}
+\newtcolorbox{hintbox}{enhanced,colback=papertwo,colframe=papertwo,boxrule=0pt,arc=1mm,
+  left=2.5mm,right=2.5mm,top=1.2mm,bottom=1.2mm,before skip=1.2mm,after skip=1.5mm,
+  parbox=false,before upper={\setlength{\parskip}{1mm}},fontupper=\footnotesize}
+\newtcolorbox{codebox}{enhanced,colback=white,colframe=ink,boxrule=0.5pt,arc=1mm,
+  left=3mm,right=3mm,top=1.5mm,bottom=1.5mm,before skip=2mm,after skip=2mm,fontupper=\sffamily\small}
+\newcommand\answerlines[1]{%
+  \begin{tcolorbox}[enhanced,colback=white,colframe=rulec,boxrule=0.5pt,arc=1mm,
+    left=2mm,right=2mm,top=1mm,bottom=1.5mm,before skip=1mm,after skip=1.5mm]
+  {\sffamily\scriptsize\color{grayt}回答（下書き）}\par
+  \foreach\n in {1,...,#1}{\nointerlineskip\noindent{\color{rulec}\vbox to 6.2mm{\vfil\hrule width\linewidth}}\par}
+  \end{tcolorbox}}
+
+
+\usepackage{array}
+\newcommand\topichead[4]{% 回の表示、トピック番号、全トピック数、題
+  {\sffamily\footnotesize\color{grayt}#1\par}\vspace{1.5mm}
+  {\sffamily\bfseries\LARGE #4}\hfill\colorbox{accent}{\sffamily\footnotesize\bfseries トピック #2 / #3}\par
+  \vspace{1.2mm}{\color{ink}\hrule height 0.6pt}\vspace{3mm}}
+\newcommand\subhead[1]{\par\vspace{2.6mm}{\sffamily\bfseries\large #1}\par\vspace{1.3mm}}
+\newtcolorbox{checkbox}{enhanced,colback=white,colframe=coral,boxrule=0.5pt,arc=1mm,
+  left=2.5mm,right=2.5mm,top=1.2mm,bottom=1.2mm,before skip=2mm,after skip=1mm,fontupper=\small}
+
+\newcommand*\wslabel{第6回講義ノート}
+\hypersetup{pdftitle={第6回講義ノート　経営情報の基礎：企業（組織）とソーシャルメディア},pdfauthor={河合 勝彦},pdfsubject={企業診断ＡＢＣ 2026（河合担当分）}}
+\begin{document}
+\topichead{第6回講義ノート｜経営情報の基礎：企業（組織）とソーシャルメディア｜2026年11月2日（月）2限}{1}{4}{ガイダンス：河合担当回の進め方}
+河合が担当するのは第6回から第10回までの5回です。企業の活動を「情報」の面から観察し、評価する力をつけることを目標にします。5回を通して、企業を診る視点を、情報と発信、技術、構造、戦略、社会の順に広げていきます。\par\vspace{1.2mm}
+\subhead{5回の構成}
+\begin{center}\small\renewcommand{\arraystretch}{1.15}\setlength{\tabcolsep}{1.5mm}
+\begin{tabular}{|p{24.0mm}|p{44.3mm}|p{44.3mm}|p{44.3mm}|}\arrayrulecolor{rulec}\hline
+\rowcolor{papertwo}\sffamily\bfseries 回 & \sffamily\bfseries 日程 & \sffamily\bfseries テーマ & \sffamily\bfseries 診る視点\\\hline
+第6回 & 11月2日（月） & 経営情報の基礎：企業（組織）とソーシャルメディア & 情報と発信\\\hline
+第7回 & 11月9日（月） & 人工知能：企業における生成AI & 技術\\\hline
+第8回 & 11月16日（月） & つながり：ネットワークがもたらす企業の変化 & 構造\\\hline
+第9回 & 11月23日（月・祝、祝日授業日） & XテックとDX：企業のデジタル戦略 & 戦略\\\hline
+第10回 & 11月30日（月） & あたらしい社会像：Society 5.0 と スマートシティ & 社会（まとめ・小テスト）\\\hline
+\end{tabular}\end{center}\vspace{0.5mm}
+\subhead{連絡と資料}
+\begin{itemize}[leftmargin=1.5em,itemsep=0.6mm,topsep=0.3mm]
+\item 連絡はすべて Microsoft Teams で行います。休講や教室の変更、投稿の締切も Teams で案内します。
+\item 講義資料（この講義ノート）は、各回の講義のあとに Teams に掲載します。次の回までに読み返してください。
+\item 講義サイト（kklab.mobi/kklab-ksabc2026）には、各回のねらい、キーワード、講義の流れ、ワークシート、出席確認クイズ、講義アンケートがあります。
+\end{itemize}\vspace{0.8mm}
+\subhead{評価}
+評価は、授業への参加度と小テストで行います。参加度は、各回のテーマに関する記事の Teams への投稿で評価します。投稿のテーマは各回の講義サイトとワークシートに載せており、ワークシートの問いに答えていけば、その回の投稿ができあがります。小テストは第10回に行い、第6回から第10回の内容を範囲とします。\par\vspace{1.2mm}
+\begin{hintbox}
+{\sffamily\bfseries ポイント}　投稿は、ほかの受講生の目にも触れる前提で書きます。生成AIで調べたり下書きしたりした場合は、その旨と、自分で確かめた点を1行添えてください。AIの文章をそのまま貼らず、自分の言葉で書くことが、第7回で学ぶ「人が確かめる」の実践になります。\par
+\end{hintbox}
+\begin{checkbox}
+{\sffamily\bfseries 確認}　5回の「診る視点」を、順に言えますか。各回のテーマと結びつけて覚えておきましょう。\par
+\end{checkbox}
+\clearpage
+\topichead{第6回講義ノート｜経営情報の基礎：企業（組織）とソーシャルメディア｜2026年11月2日（月）2限}{2}{4}{経営情報の基礎}
+企業はなぜ情報を必要とするのでしょうか。答えは、企業の活動が意思決定の連続だからです。このパートでは、データ・情報・知識の違い、意思決定における情報の役割、経営資源としての情報、そして情報の偏りが取引や組織に与える影響を押さえます。\par\vspace{1.2mm}
+\subhead{データ・情報・知識}
+\begin{center}\small\renewcommand{\arraystretch}{1.15}\setlength{\tabcolsep}{1.5mm}
+\begin{tabular}{|p{24.0mm}|p{68.0mm}|p{68.0mm}|}\arrayrulecolor{rulec}\hline
+\rowcolor{papertwo}\sffamily\bfseries 階層 & \sffamily\bfseries 意味 & \sffamily\bfseries 和菓子店の例\\\hline
+データ & 数字や事実の記録そのもの & 10月5日　どら焼き　42個\\\hline
+情報 & データを整理して、意味が読み取れるようにしたもの & 雨の日は売れ行きが2割ほど少ない\\\hline
+知識 & 情報をもとに、次の判断に使える形になったもの & 雨の予報の日は仕込みを減らす\\\hline
+\end{tabular}\end{center}\vspace{0.5mm}
+データは集めただけでは役に立ちません。比べたり、まとめたりして意味を読み取ると情報になり、判断の指針になると知識になります。企業の情報システムは、この変換を速く、確実に行うための仕組みです。\par\vspace{1.2mm}
+\subhead{意思決定における情報の役割}
+サイモン（H. A. Simon）は意思決定を、情報収集、設計、選択の3つの段階に分けました。問題に気づく段階（情報収集）、選択肢を考える段階（設計）、選択肢から選ぶ段階（選択）のどこでも情報が必要で、どの段階の情報が足りないかで、必要な対策が変わります。選んだあとの結果を確かめることも、次の情報収集につながります。\par\vspace{1.2mm}
+\subhead{経営資源としての情報}
+経営資源は、ヒト・モノ・カネに「情報」を加えた4つで説明されます。情報には、複製しても減らない、同時に多くの人が使える、組み合わせると価値が上がる、時間がたつと価値が下がる、という性質があります。モノやカネと同じようには管理できないので、企業は情報を集め、共有し、守る仕組みを別に必要とします。\par\vspace{1.2mm}
+\subhead{情報の非対称性}
+取引の一方だけが多くの情報を持つ状態を、情報の非対称性といいます。アカロフ（1970）は中古車市場を例に、買い手が品質を見分けられないと、良い車ほど市場から消えていくことを示しました（逆選択）。売り手が保証や評判で品質を示すこと（シグナリング）や、買い手が情報を集めること（スクリーニング）が、取引を成り立たせます。経営者と現場、本社と支店のあいだにも非対称性があり、組織の中でも情報の流れの設計が問題になります。\par\vspace{1.2mm}
+\begin{checkbox}
+{\sffamily\bfseries 確認}　自分の身近な記録を1つ選び、データ・情報・知識の3つの形で書いてみましょう。\par
+\end{checkbox}
+\clearpage
+\topichead{第6回講義ノート｜経営情報の基礎：企業（組織）とソーシャルメディア｜2026年11月2日（月）2限}{3}{4}{ソーシャルメディアとは何か}
+ソーシャルメディアは、利用者が内容をつくり、互いにやりとりし、広げていくメディアです。カプランとヘンライン（2010）は、Web 2.0 を基盤にユーザー生成コンテンツの作成と交換を可能にするインターネット上のアプリケーション群と定義しました。マスメディアと比べると、その特徴がはっきりします。\par\vspace{1.2mm}
+\subhead{マスメディアとの比較}
+\begin{center}\small\renewcommand{\arraystretch}{1.15}\setlength{\tabcolsep}{1.5mm}
+\begin{tabular}{|p{24.0mm}|p{68.0mm}|p{68.0mm}|}\arrayrulecolor{rulec}\hline
+\rowcolor{papertwo}\sffamily\bfseries 観点 & \sffamily\bfseries マスメディア & \sffamily\bfseries ソーシャルメディア\\\hline
+発信者 & 少数の送り手（新聞社、放送局） & 誰でも\\\hline
+方向 & 一方向 & 双方向（返信、共有、評価）\\\hline
+内容の作り手 & 専門の記者や制作者 & 利用者（UGC）\\\hline
+広がり方 & 送り手が決めた範囲と時間 & 受け手の転送で予測できない範囲へ\\\hline
+信頼の根拠 & 発信者の信用と編集 & 知人の推薦、評価の数、体験談\\\hline
+\end{tabular}\end{center}\vspace{0.5mm}
+\subhead{3つの特徴}
+\begin{itemize}[leftmargin=1.5em,itemsep=0.6mm,topsep=0.3mm]
+\item {\sffamily\bfseries 双方向性}　発信する側と受け取る側が、互いにやりとりできる。企業にとっては、顧客の反応が直接届くということ。
+\item {\sffamily\bfseries 拡散性}　受け取った人の転送や再投稿によって、情報が次々と広がる。良い話も悪い話も同じように広がる。
+\item {\sffamily\bfseries UGC（ユーザー生成コンテンツ）}　企業ではなく、利用者がつくって発信する投稿やレビュー。企業の宣伝より信用されやすい。
+\end{itemize}\vspace{0.8mm}
+\subhead{種類の違い}
+SNS（交流と近況）、動画共有（検索されて長く見られる）、レビュー（購入の直前に読まれる）、メッセージング（閉じた関係での連絡と、公式アカウントからの通知）など、種類によって、誰が、いつ、何のために使うかが違います。企業が発信先を選ぶときは、この違いが出発点になります。\par\vspace{1.2mm}
+\subhead{口コミが信頼と評判をつくるしくみ}
+口コミは、買い手が持てない情報を埋め、情報の非対称性を小さくします。レビューの件数と内容、知人の推薦が、企業の広告より強く購買を左右するのはこのためです。ただし、口コミが「正しい」とは限りません。Twitter の投稿を分析した研究（Vosoughi ほか, 2018）では、虚偽の情報は真実より約70\%再投稿されやすく、速く広く広がっていました。また、米国の利用者の上位10\%が投稿全体の約80\%を生み出しているという調査（Pew Research Center, 2019）もあります。「よく見かける意見」は、少数の熱心な発信者の意見であることが多いのです。\par\vspace{1.2mm}
+\begin{checkbox}
+{\sffamily\bfseries 確認}　ソーシャルメディアが従来のメディアと決定的に異なる点を、3つ挙げられますか。\par
+\end{checkbox}
+\clearpage
+\topichead{第6回講義ノート｜経営情報の基礎：企業（組織）とソーシャルメディア｜2026年11月2日（月）2限}{4}{4}{企業（組織）とソーシャルメディア}
+企業にとってソーシャルメディアは、外に向けて発信し、顧客の声を聞く場であると同時に、組織の中で情報を共有する道具でもあります。そして、企業が発信しなくても、企業について語られる場です。活用とリスクを対にして整理します。\par\vspace{1.2mm}
+\subhead{外に向けた活用}
+\begin{itemize}[leftmargin=1.5em,itemsep=0.6mm,topsep=0.3mm]
+\item {\sffamily\bfseries マーケティング}　新商品や季節の情報を、来店や購買のきっかけとして届ける。広告費をかけずに届く反面、投稿の中身で判断される。
+\item {\sffamily\bfseries 顧客対応}　問い合わせや苦情に公開の場で答える。対応そのものが、ほかの顧客に見られる。
+\item {\sffamily\bfseries 採用}　職場のようすや社員の声を伝え、応募の前に企業を知ってもらう。
+\item {\sffamily\bfseries ソーシャルリスニング}　自社や商品についての投稿を集めて分析し、評判、不満、需要の変化を知る。アンケートより速く、本音に近い。
+\end{itemize}\vspace{0.8mm}
+公式アカウントを診るときは、「誰に・何を・何のために」発信しているかを、投稿の中身から逆算します。\par\vspace{1.2mm}
+\subhead{組織の中での活用}
+社内SNSやコラボレーションツール（Teams、Slack など）は、部門や拠点を越えた情報共有と協働を支えます。メールと違い、やりとりが残り、あとから加わった人にも見えます。情報が公開されやすい組織文化は、意思決定の速さや、問題の早期発見につながる一方、発言のしやすさ（心理的安全性）をどう保つかが問われます。\par\vspace{1.2mm}
+\subhead{リスクとガバナンス}
+\begin{center}\small\renewcommand{\arraystretch}{1.15}\setlength{\tabcolsep}{1.5mm}
+\begin{tabular}{|p{38.0mm}|p{125.0mm}|}\arrayrulecolor{rulec}\hline
+\rowcolor{papertwo}\sffamily\bfseries リスク & \sffamily\bfseries 内容\\\hline
+炎上 & 投稿や対応への批判が短時間で広がり、企業全体の評判に及ぶ\\\hline
+誤情報 & 誤った情報が企業の名で、または企業について広がる\\\hline
+なりすまし & 企業や社員を装ったアカウントが、顧客をだます\\\hline
+従業員の投稿 & 私的なアカウントの投稿が、職場の内部情報や不適切な行為を公にする\\\hline
+\end{tabular}\end{center}\vspace{0.5mm}
+第6回の「最近の話題」で見たように、組織が発表しなくても、現場にいる当事者が世界に直接発信できる時代です。組織の外に出ていく情報を、組織だけでは決められません。そこで企業は、ソーシャルメディアポリシーを定めます。公式アカウントの目的と運用体制、投稿前の確認、機密情報と個人情報の扱い、社員の私的利用の指針、問題が起きたときの対応手順を、あらかじめ決めておくものです。\par\vspace{1.2mm}
+\begin{checkbox}
+{\sffamily\bfseries 確認}　身近な企業の公式アカウントについて、メリットとリスクを1つずつ、対にして説明できますか。\par
+\end{checkbox}
+\vspace{1.5mm}{\sffamily\footnotesize\color{grayt}出典：Kaplan, A. M., \& Haenlein, M. (2010). Users of the world, unite! Business Horizons, 53(1)／Vosoughi, S., Roy, D., \& Aral, S. (2018). The spread of true and false news online. Science, 359(6380)／Pew Research Center (2019). Sizing Up Twitter Users\par}
+\end{document}

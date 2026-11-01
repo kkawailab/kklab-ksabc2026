@@ -1,0 +1,150 @@
+
+\documentclass[paper=a4paper,fontsize=10pt,line_length=170mm,number_of_lines=46,baselineskip=1.6zw]{jlreq}
+\usepackage[table]{xcolor}
+\usepackage[most]{tcolorbox}
+\usepackage{enumitem}
+\usepackage{needspace}
+\usepackage{array}
+\usepackage{fancyhdr}
+\usepackage[colorlinks=true,linkcolor=linkblue,urlcolor=linkblue]{hyperref}
+\ltjsetparameter{jacharrange={-1,+2,+3,+4,-5,+6,+7,+8}}
+\definecolor{ink}{HTML}{0F1D33}
+\definecolor{inktwo}{HTML}{3D4A63}
+\definecolor{grayt}{HTML}{6B7280}
+\definecolor{paper}{HTML}{F4F2EC}
+\definecolor{papertwo}{HTML}{E8E4D9}
+\definecolor{rulec}{HTML}{C9C5B9}
+\definecolor{accent}{HTML}{FFC857}
+\definecolor{coral}{HTML}{D9593A}
+\definecolor{linkblue}{HTML}{1F4E9E}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlist{nosep,leftmargin=1.5em}
+\pagestyle{fancy}\fancyhf{}\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[L]{\sffamily\scriptsize\color{grayt}企業診断ＡＢＣ 2026（河合担当分）　\wslabel}
+\fancyfoot[R]{\sffamily\scriptsize\color{grayt}\thepage}
+\newcommand\sectionhead[2]{\par\needspace{24mm}\vspace{3mm}%
+  {\sffamily\bfseries\large #1\if\relax\detokenize{#2}\relax\else\textcolor{coral}{　#2}\fi}\par
+  \vspace{0.8mm}{\color{ink}\hrule height 0.5pt}\vspace{1.5mm}}
+\newcommand\question[2]{\par\needspace{34mm}\vspace{3mm}%
+  {\sffamily\bfseries #1}\hfill\colorbox{accent}{\sffamily\footnotesize\bfseries 目安：#2}\par\vspace{1mm}}
+\newtcolorbox{goalbox}{enhanced,colback=paper,colframe=paper,boxrule=0pt,arc=1mm,
+  left=3mm,right=3mm,top=1.5mm,bottom=1.5mm,before skip=1mm,after skip=1mm,fontupper=\small}
+\newtcolorbox{storybox}{enhanced,breakable,colback=paper,colframe=paper,boxrule=0pt,arc=0mm,
+  borderline west={1.1mm}{0pt}{accent},left=3.5mm,right=3mm,top=2mm,bottom=2mm,
+  before skip=1mm,after skip=1.5mm,parbox=false,before upper={\setlength{\parskip}{1.2mm}}}
+\newtcolorbox{closingbox}{enhanced,colback=paper,colframe=paper,boxrule=0pt,arc=0mm,
+  borderline west={1.1mm}{0pt}{accent},left=3.5mm,right=3mm,top=2mm,bottom=2mm,
+  before skip=1mm,after skip=1.5mm,parbox=false,before upper={\setlength{\parskip}{1.2mm}}}
+\newtcolorbox{hintbox}{enhanced,colback=papertwo,colframe=papertwo,boxrule=0pt,arc=1mm,
+  left=2.5mm,right=2.5mm,top=1.2mm,bottom=1.2mm,before skip=1.2mm,after skip=1.5mm,
+  parbox=false,before upper={\setlength{\parskip}{1mm}},fontupper=\footnotesize}
+\newtcolorbox{codebox}{enhanced,colback=white,colframe=ink,boxrule=0.5pt,arc=1mm,
+  left=3mm,right=3mm,top=1.5mm,bottom=1.5mm,before skip=2mm,after skip=2mm,fontupper=\sffamily\small}
+\newcommand\answerlines[1]{%
+  \begin{tcolorbox}[enhanced,colback=white,colframe=rulec,boxrule=0.5pt,arc=1mm,
+    left=2mm,right=2mm,top=1mm,bottom=1.5mm,before skip=1mm,after skip=1.5mm]
+  {\sffamily\scriptsize\color{grayt}回答（下書き）}\par
+  \foreach\n in {1,...,#1}{\nointerlineskip\noindent{\color{rulec}\vbox to 6.2mm{\vfil\hrule width\linewidth}}\par}
+  \end{tcolorbox}}
+
+
+\usepackage{array}
+\newcommand\topichead[4]{% 回の表示、トピック番号、全トピック数、題
+  {\sffamily\footnotesize\color{grayt}#1\par}\vspace{1.5mm}
+  {\sffamily\bfseries\LARGE #4}\hfill\colorbox{accent}{\sffamily\footnotesize\bfseries トピック #2 / #3}\par
+  \vspace{1.2mm}{\color{ink}\hrule height 0.6pt}\vspace{3mm}}
+\newcommand\subhead[1]{\par\vspace{2.6mm}{\sffamily\bfseries\large #1}\par\vspace{1.3mm}}
+\newtcolorbox{checkbox}{enhanced,colback=white,colframe=coral,boxrule=0.5pt,arc=1mm,
+  left=2.5mm,right=2.5mm,top=1.2mm,bottom=1.2mm,before skip=2mm,after skip=1mm,fontupper=\small}
+
+\newcommand*\wslabel{第8回講義ノート}
+\hypersetup{pdftitle={第8回講義ノート　つながり：ネットワークがもたらす企業の変化},pdfauthor={河合 勝彦},pdfsubject={企業診断ＡＢＣ 2026（河合担当分）}}
+\begin{document}
+\topichead{第8回講義ノート｜つながり：ネットワークがもたらす企業の変化｜2026年11月16日（月）2限}{1}{4}{ネットワーク効果}
+利用者が増えるほど、一人ひとりにとっての価値が上がる。この性質をネットワーク効果といいます。情報財やデジタルサービスに広く見られ、企業の競争のしかたを根本から変えます。\par\vspace{1.2mm}
+\subhead{直接と間接}
+\begin{center}\small\renewcommand{\arraystretch}{1.15}\setlength{\tabcolsep}{1.5mm}
+\begin{tabular}{|p{24.0mm}|p{68.0mm}|p{68.0mm}|}\arrayrulecolor{rulec}\hline
+\rowcolor{papertwo}\sffamily\bfseries 種類 & \sffamily\bfseries 価値が上がるしくみ & \sffamily\bfseries 例\\\hline
+直接ネットワーク効果 & 同じ側の利用者が増えることで、つながれる相手が増える & 電話、SNS、メッセージングアプリ\\\hline
+間接ネットワーク効果 & 利用者が増えると別の側（ソフト、店など）が増え、その結果として価値が上がる & OSとアプリ、決済と加盟店、ゲーム機とソフト\\\hline
+\end{tabular}\end{center}\vspace{0.5mm}
+電話の価値は、話せる相手の数で決まります。利用者が n 人なら、つながりの数は n の2乗に比例して増えるという説明（メトカーフの法則）は、直接効果の大きさを示す目安です。間接効果では、利用者と相手側が互いを呼び込みます。利用者が多いOSにはアプリが集まり、アプリが多いOSに利用者が集まります。\par\vspace{1.2mm}
+\subhead{臨界点を超えると何が起きるか}
+ネットワーク効果のあるサービスは、利用者が少ないうちは価値も小さく、なかなか広がりません。一定の規模（臨界点、クリティカルマス）を超えると、利用者の増加が価値を上げ、価値がさらに利用者を呼ぶ自己増殖が始まります。超えられなければ消えていきます。初期の無料提供や招待制は、臨界点を早く超えるための手段です。\par\vspace{1.2mm}
+\subhead{勝者総取り、ロックイン、標準化}
+\begin{itemize}[leftmargin=1.5em,itemsep=0.6mm,topsep=0.3mm]
+\item {\sffamily\bfseries 勝者総取り}　利用者が集まった側にさらに集まるため、少数の勝者が市場の大半を占める。世界のスマートフォンOSは Android が約7割、iOS が約3割で、それ以外は合計でも1\%に届かない（StatCounter）。
+\item {\sffamily\bfseries ロックインとスイッチングコスト}　乗り換えると、友人とのつながり、移せないデータや履歴、ためたポイント、操作の慣れを失う。この損失（スイッチングコスト）が、品質で劣るサービスでも利用者を引き留める。
+\item {\sffamily\bfseries 標準化競争}　規格が1つに決まると、間接効果が働いて周辺の製品が集まる。だから企業は、自社の規格を標準にしようと競う。
+\end{itemize}\vspace{0.8mm}
+利用者が増えると価値が下がる例（混雑、迷惑な投稿の増加）もあります。負のネットワーク効果です。\par\vspace{1.2mm}
+\begin{checkbox}
+{\sffamily\bfseries 確認}　直接ネットワーク効果と間接ネットワーク効果の違いを、自分が使っているサービスを例に説明できますか。\par
+\end{checkbox}
+\clearpage
+\topichead{第8回講義ノート｜つながり：ネットワークがもたらす企業の変化｜2026年11月16日（月）2限}{2}{4}{プラットフォームと両面市場}
+売り手と買い手、開発者と利用者のように、異なる2つの側を結びつけ、やりとりを成り立たせる場をプラットフォームといいます。2つの側があり、どちらの側の数も相手側にとっての価値になる市場を、両面市場といいます（Rochet \& Tirole, 2003）。\par\vspace{1.2mm}
+\subhead{身近な両面市場}
+\begin{center}\small\renewcommand{\arraystretch}{1.15}\setlength{\tabcolsep}{1.5mm}
+\begin{tabular}{|p{24.0mm}|p{44.3mm}|p{44.3mm}|p{44.3mm}|}\arrayrulecolor{rulec}\hline
+\rowcolor{papertwo}\sffamily\bfseries プラットフォーム & \sffamily\bfseries 一方の側 & \sffamily\bfseries もう一方の側 & \sffamily\bfseries 主に課金される側\\\hline
+アプリストア & 開発者 & 利用者 & 開発者（手数料）\\\hline
+通販モール & 出店者 & 買い手 & 出店者（出店料、販売手数料）\\\hline
+検索・SNS & 広告主 & 利用者 & 広告主\\\hline
+クレジットカード & 加盟店 & 会員 & 加盟店（手数料）\\\hline
+\end{tabular}\end{center}\vspace{0.5mm}
+\subhead{どちら側に課金するか}
+両面市場では、価格の水準より価格の構造が問題になります。一方の側を無料にして利用者を集め、その利用者を求めるもう一方の側から収入を得る形が一般的です。無料にするのは、価格に敏感で、相手側にとって集まってほしい側です。通販モールが買い手を無料にして出店者から手数料を取るのは、買い手が増えるほど出店者の売る機会が増え、出店者が手数料を払ってでも出店したいと考えるからです。\par\vspace{1.2mm}
+\subhead{「鶏と卵」の問題}
+どちらの側も、相手がいなければ集まりません。出店者がいないモールに買い手は来ず、買い手がいないモールに出店者は来ません。企業は、一方の側を自前で用意する（自社で商品をそろえる）、既存のつながりを借りる（会員基盤を持つ企業と組む）、一方の側に補助を出す、といった方法でこの問題を乗り越えます。\par\vspace{1.2mm}
+\subhead{規模の経済との違い}
+規模の経済は、生産量が増えるほど1個あたりの費用が下がるという供給側の性質です。ネットワーク効果は、利用者が増えるほど価値が上がるという需要側の性質です。プラットフォームは両方を備えることが多く、だから一度大きくなると追いつきにくくなります。\par\vspace{1.2mm}
+\subhead{支配力と競争政策}
+勝者総取りの先には、手数料の引き上げ、自社サービスの優遇、データの独占といった問題があります。EUのデジタル市場法（DMA）や、日本で2025年12月に全面施行されたスマホ新法は、巨大なプラットフォームに、別のアプリストアや外部の決済手段を開放することなどを求めています。第8回の「最近の話題」で見た手数料の争点は、この問題の一例です。\par\vspace{1.2mm}
+\begin{checkbox}
+{\sffamily\bfseries 確認}　両面市場で「どちら側に課金するか」が問題になる理由を、ハナさん（ワークシートの店主）にわかるように説明できますか。\par
+\end{checkbox}
+\clearpage
+\topichead{第8回講義ノート｜つながり：ネットワークがもたらす企業の変化｜2026年11月16日（月）2限}{3}{4}{ネットワーク科学から見る「つながり」}
+人や組織のつながりを、点と線のネットワークとして調べる分野がネットワーク科学です。そこから、情報の流れ、口コミの広がり、障害の連鎖に共通する構造が見えてきます。3つの考え方を押さえます。\par\vspace{1.2mm}
+\subhead{弱い紐帯の強さ}
+グラノヴェッター（1973）は、転職の情報がどこから来るのかを調べました。知人を通じて職を得た人のうち、その知人と「よく会う」人は16.7\%にすぎず、「たまに会う」55.6\%と「まれに会う」27.8\%を合わせた約83\%が、弱いつながりからでした。よく会う人どうしは同じ情報を共有しているので、新しい情報は、たまにしか会わない人から来やすいのです。弱い紐帯は、別の集団への橋になります。組織の中でも、部門をまたぐゆるいつながりが、新しい情報の通り道になります。\par\vspace{1.2mm}
+\subhead{スモールワールド}
+ミルグラム（1967）の手紙の実験は、見知らぬ2人が平均6人ほどの知人をたどってつながることを示しました（六次の隔たり）。ワッツとストロガッツ（1998）は、身近なつながりの密集（クラスター）と、少数の遠くへの近道があれば、短い経路で誰にでもつながることを説明しました。Facebook が2016年に全利用者のつながりを分析した結果では、任意の2人の間に入る人数は平均3.57人で、世界はさらに小さくなっています。\par\vspace{1.2mm}
+\subhead{スケールフリーとハブ}
+多くのネットワークでは、つながりの数は均等ではなく、ごく少数の点（ハブ）に接続が集中します（Barabási \& Albert, 1999）。新しく加わる点は、すでに多くつながっている点につながりやすいからです（優先的選択）。友人の多い人は多くの人の友人リストに現れるので、統計的には「自分の友人は、自分より友人が多い」ことになります（友人関係のパラドックス, Feld, 1991）。\par\vspace{1.2mm}
+\subhead{共通する構造}
+\begin{center}\small\renewcommand{\arraystretch}{1.15}\setlength{\tabcolsep}{1.5mm}
+\begin{tabular}{|p{38.0mm}|p{125.0mm}|}\arrayrulecolor{rulec}\hline
+\rowcolor{papertwo}\sffamily\bfseries 現象 & \sffamily\bfseries ネットワークの見方\\\hline
+組織内の情報の流れ & 部門内は強い紐帯、部門間は弱い紐帯。弱い紐帯が切れると情報が滞る\\\hline
+口コミの拡散 & ハブ（多くのフォロワーを持つ人）を経ると一気に広がる\\\hline
+感染症、システム障害 & ハブに届くと連鎖する。ハブを守れば止まりやすい\\\hline
+\end{tabular}\end{center}\vspace{0.5mm}
+ハブに集中した構造は、偶然の故障には強く、ハブを狙った攻撃や障害には弱いという性質を持ちます。\par\vspace{1.2mm}
+\begin{checkbox}
+{\sffamily\bfseries 確認}　「弱い紐帯」が情報の獲得に役立つのはなぜか、説明できますか。\par
+\end{checkbox}
+\vspace{1.5mm}{\sffamily\footnotesize\color{grayt}出典：Granovetter, M. S. (1973). The Strength of Weak Ties. American Journal of Sociology, 78(6)／Granovetter (1974). Getting a Job／Feld, S. L. (1991). Why Your Friends Have More Friends Than You Do. American Journal of Sociology, 96(6)\par}
+\clearpage
+\topichead{第8回講義ノート｜つながり：ネットワークがもたらす企業の変化｜2026年11月16日（月）2限}{4}{4}{企業間ネットワークと価値創造}
+企業は単独では価値をつくれません。部品を供給する企業、販売を担う企業、技術を持ち寄る企業とのつながりの中で価値が生まれます。企業間のネットワークを見ると、「企業の境界」そのものが問い直されます。\par\vspace{1.2mm}
+\subhead{サプライチェーンの相互依存と脆弱性}
+原材料から部品、組み立て、販売までのつながりがサプライチェーンです。効率を求めて分業と在庫の削減を進めるほど、1か所の停止が全体に波及しやすくなります。2011年の東日本大震災とタイの洪水では、部品工場の被災が世界の自動車や電機の生産を止め、2020年以降の半導体不足は、多くの産業の出荷を遅らせました。企業は、取引先の先にある取引先まで把握し（可視化）、調達先を複線化し、重要な部品の在庫を持つことで、脆弱性に備えます。\par\vspace{1.2mm}
+\subhead{系列・提携・オープンイノベーション}
+\begin{itemize}[leftmargin=1.5em,itemsep=0.6mm,topsep=0.3mm]
+\item {\sffamily\bfseries 系列}　長期の取引関係で結ばれた企業群。安定した協力と改善が進む一方、関係の外から新しい技術が入りにくい。
+\item {\sffamily\bfseries 提携}　目的を限って協力する関係。共同開発、販売の相互委託、共同出資など。
+\item {\sffamily\bfseries オープンイノベーション}　自社の外にある技術やアイデアを取り込み、自社の技術を外にも出して価値をつくる考え方（Chesbrough, 2003）。大学や新興企業との連携、APIの公開がその手段。
+\end{itemize}\vspace{0.8mm}
+\subhead{産業をエコシステムとして捉える}
+生態系になぞらえて、中核となる企業と、その周りで補完する製品やサービスを提供する企業の全体を、ビジネスエコシステムといいます。スマートフォンのOSとアプリ開発者、ゲーム機とソフト会社がその例です。価値は共創されますが、中核の企業が規格や手数料を決める力を持ち、周辺の企業は依存します。第2パートのプラットフォームの支配力は、エコシステムの中の力関係の問題でもあります。\par\vspace{1.2mm}
+\subhead{企業の境界はどこにあるのか}
+コース（1937）は、市場で買うより自社で行うほうが取引の手間と費用（取引費用）を節約できるとき、企業が生まれると考えました。デジタル技術は、相手を探す、契約する、監視するといった取引費用を下げます。すると、これまで社内で行っていた仕事を外部に任せたり、プラットフォームを通じて個人に頼んだりしやすくなり、企業の境界があいまいになります。企業を診るときは、企業単体ではなく、どのネットワークのどこにいて、誰に依存し、誰から依存されているかを見ます。\par\vspace{1.2mm}
+\begin{checkbox}
+{\sffamily\bfseries 確認}　自分が使っているサービスから別のサービスに乗り換えにくい理由（スイッチングコスト）を、1つ挙げられますか。\par
+\end{checkbox}
+\vspace{1.5mm}{\sffamily\footnotesize\color{grayt}参考：Shapiro, C., \& Varian, H. R. (1999). Information Rules（邦訳『「ネットワーク経済」の法則』）／Barabási, A.-L. (2002). Linked（邦訳『新ネットワーク思考』）\par}
+\end{document}
